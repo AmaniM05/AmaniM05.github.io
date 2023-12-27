@@ -20,8 +20,8 @@
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Work Experience</a></li>
-            <li><a href="#Portfolio">Profile</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
             <i class="fas fa-times" onclick="closemenu()"></i>
           </ul>
           <i class="fas fa-bars" onclick="openmenu()"></i>
@@ -77,106 +77,8 @@
         if (textArray.length) setTimeout(type, newTextDelay + 250);
       });
     </script>
-
-    <!-- About Section -->
-    <div id="about">
-      <div class="container">
-        <div class="row">
-          <div class="about-col-1">
-            <img src="For Portfolio/profile.jpeg">
-          </div>
-          <div class="about-col-2">
-            <h1 class="sub-title">About Me</h1>
-            <p>I have a background in market research and web development. In my recent role at ContentBlocks, I played a role in building a pipeline of over 1,000 prospective buyers. Notably, I contributed to the increased awareness of the platform within the SaaS/Startup community. Additionally, my proficiency in web development is showcased through my work at Ofori Beauty, where I coded and designed a fully functional website for a small business. I regularly collaborated with the CEO to ensure alignment with the business vision. Complementing my practical experience, I have a strong foundation in software engineering, as evidenced by my collaborative projects in building myself a responsive resume portfolio and also a website for a group project for a university course. As a software engineering student, I am eager to refine and expand my technical writing, programming, and problem-solving skills.</p>
-
-            <div class="tab-titles"> 
-              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-              <p class="tab-links" onclick="opentab('Experience')">Experience</p>
-              <p class="tab-links" onclick="opentab('Education')">Education</p>
-            </div>   
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li><span>Java development</span><br>built many java functions for university</li>
-                <li><span>Web development</span><br>built 3 websites</li>
-                <li><span>Python development</span><br>built many python functions for university</li>
-              </ul> 
-            </div>
-            <div class="tab-contents" id="Experience">
-              <ul>
-                <li><span>2023-2023</span><br>market research</li>
-                <li><span>2023-2023</span><br>Web Development</li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="Education">
-              <ul>
-                <li><span>2023-2027</span><br>University of Ottawa Bachelors of Applied Science in Software Engineering</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Work Experience Section -->
-    <div id="services">
-      <div class="container">
-        <h1 class="sub-title">Work Experience</h1>
-        <div class="services-list">
-          <div>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <h2>Market Research</h2>
-            <p>Aided in building a robust pipeline (over 1k prospective buyers)
-              Defining and redefining ideal customer avatars
-              Increased awareness of the platform within the SaaS / Startup community (likes, comments, PH upvotes etc.)</p>
-          </div>    
-          <div>
-            <i class="fa-regular fa-laptop"></i>
-            <h2>Web Development</h2>
-            <p>Code and design a fully functional website for a small business.
-              Meeting regularly with CEO of business to discuss website design.</p>
-            <a href="#">Learn more</a>
-          </div>  
-          <div>
-            <i class="fa-regular fa-face-frown-open"></i>
-            <h2>Empty box</h2>
-            <p>This container is empty at the moment</p>
-          </div>           
-        </div>
-      </div>
-    </div>
-
-    <!-- Profile Section -->
-    <div id="Portfolio">
-      <div class="container">
-        <h1 class="sub-title">Profile</h1>
-        <div class="work-list">
-          <div class="work">
-            <img src="For Portfolio/pic 1.jpeg">
-            <div class="layer">
-              <h3>Github</h3>
-              <p>My Github profile</p>
-              <a href="#"><i class="fa-regular fa-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div class="work">
-            <img src="For Portfolio/pic 2.jpeg">
-            <div class="layer">
-              <h3>Linkedin</h3>
-              <p>My LinkedIn profile</p>
-              <a href="https://www.linkedin.com/in/amani-mohamed-086663288/"><i class="fa-regular fa-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div class="work">
-            <img src="For Portfolio/pic 3.jpeg">
-            <div class="layer">
-              <h3>Portfolio</h3>
-              <p>My personal portfolio (this website)</p>
-              <a href="https://amanim05.github.io"><i class="fa-regular fa-up-right-from-square"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </body>
+</html>
 
 <!--------------about----------->
 <div id="about">
@@ -198,9 +100,9 @@
             <div class="tab-contents active-tab" id="skills">
                 
               <ul>
-                 <li><span>Java development</span><br>built many java functions for university </li>
+                 <li><span>Java development</span><br>java functions for university course </li>
                  <li><span>Web development</span><br>built 3 websites</li>
-                 <li><span>Python development</span><br>built many python functions for university</li>
+                 <li><span>Python development</span><br>python functions for university course</li>
               </ul> 
          </div>
          <div class="tab-contents" id="Experience">
@@ -249,12 +151,21 @@
   </div>
 </div>
 <!-----------Porfolio----------->
+<style>
+  .work img {
+    width: 350px; /* Adjust the width as per your preference */
+    height: 250px; /* Adjust the height as per your preference */
+    object-fit: cover; /* This property ensures the image maintains its aspect ratio */
+  }
+</style>
 <div id="Portfolio">
   <div class="container">
     <h1 class="sub-title">Profile</h1>
     <div class="work-list">
       <div class="work">
-        <img src="For Portfolio/pic 1.jpeg">
+        <a href="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+          <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+        </a>        
         <div class="layer">
           <h3>Github</h3>
           <p>My Github profile</p>
@@ -262,23 +173,22 @@
         </div>
       </div>
       <div class="work">
-        <img src="For Portfolio/pic 2.jpeg">
-        <div class="layer">
-          <h3>Linkedin</h3>
-          <p>My linkedin profile</p>
-          <a href="https://www.linkedin.com/in/amani-mohamed-086663288/"><i class="fa-regular fa-up-right-from-square"></i></a>
-        </div>
-      </div>
-      <div class="work">
-        <img src="For Portfolio/pic 3.jpeg">
+        <img src="For Portfolio/portfolioimage.png">
         <div class="layer">
           <h3>Portfolio</h3>
           <p>My personal portfolio (this website)</p>
           <a href="https://amanim05.github.io"><i class="fa-regular fa-up-right-from-square"></i></a>
         </div>
       </div>
-    </div>
 
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+        <div class="layer">
+          <h3>Linkedin</h3>
+          <p>My linkedin profile</p>
+          <a href="https://www.linkedin.com/in/amani-mohamed-086663288/"><i class="fa-regular fa-up-right-from-square"></i></a>
+        </div>
+      </div>
   </div>
 </div>
 <!----------------Contact------------>
@@ -286,7 +196,7 @@
   <div class="container">
     <div class="row">
       <div class="contact-left">
-        <h1 class="sub-title">Contact</h1>
+        <h1 class="sub-title">Contact Me</h1>
         <p><i class="fa-solid fa-paper-plane"></i>nmoha145@uottawa.ca</p>
         <p><i class="fa-regular fa-square-phone"></i>613-407-7870</p>
         <div class="social-icons">
@@ -366,6 +276,8 @@
 </html>
 
 
+  
+ 
   
  
   
