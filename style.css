@@ -134,43 +134,55 @@
         display: block;
     }
     /*--------------services-------------*/
-    #services{
-        padding: 30px 0;
-    } 
-    .services-list{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 40px;
-        margin-top: 50px;
-    }
-    .services-list div{
-        background: rgb(218, 62, 150);
-        padding: 40px;
-        font-size: 13px;
-        font-weight: 300;
-        border-radius: 10px;
-        transition: background 0.5s, transform 0.5s;
-    }
-    .services-list div i{
-        font-size: 50px;
-        margin-bottom: 30px;
-    }
-    .services-list div h2{
-        font-size: 30px;
-        font-weight: 500;
-        margin-bottom: 15px;
-    }
-    .services-list div a{
-        text-decoration: none;
-        color: #fff;
-        font-size: 12px;
-        margin-top: 20px;
-        display: inline-block;
-    }
-    .services-list div:hover{
-        background: rgb(242, 240, 240);
-        transform: translate(-10px);
-    }
+#services {
+    padding: 30px 0;
+  }
+  
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+  }
+  
+  .services-list div {
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s, box-shadow 0.5s; /* Add box-shadow to the transition */
+    box-shadow: 0 0 20px rgba(218, 62, 150, 0.5); /* Initial box-shadow for the glow effect */
+  }
+  
+  .services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  
+  .services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .services-list div:hover {
+    background: rgb(242, 240, 240);
+    transform: translate(-10px);
+    box-shadow: 0 0 20px rgba(218, 62, 150, 0.7); /* Updated box-shadow for the glow effect on hover */
+    cursor: pointer;
+  }
+  #sidemenu li a:hover {
+    text-decoration: underline;
+  }
+  
     /*--------Portfolio--------*/
     #Portfolio{
         padding: 50px 0;
@@ -418,6 +430,7 @@
  
 
     
+
 
 
     
