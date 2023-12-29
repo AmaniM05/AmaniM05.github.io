@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/18358d5c14.js" crossorigin="anonymous"></script>
   <style>
     body {
       background-color: black;
+      margin: 0; /* Reset default margin */
+      padding: 0; /* Reset default padding */
+    }
+    
+    .header-container {
+      position: relative; /* Ensure proper positioning */
+      overflow: hidden; /* Hide overflowing content */
     }
     
     .header {
@@ -12,6 +25,8 @@
       background-position: center;
       background-repeat: no-repeat;
       animation: collapsingEffect 5s infinite;
+      height: 100vh; /* Set initial height */
+      transition: height 0.5s; /* Add smooth transition */
     }
     
     @keyframes collapsingEffect {
@@ -26,24 +41,10 @@
       }
     }
   </style>
-  
 </head>
 <body>
   <div class="header-container">
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/18358d5c14.js" crossorigin="anonymous"></script>
-    <style>
-     
-    </style>
-  </head>
-  <body>
-    <div id="header">
+    <div id="header" class="header">
       <div class="container">
         <nav> 
           <img src="For Portfolio/logo.png" class="logo">
@@ -65,49 +66,50 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      // JavaScript code to simulate typing effect
-      const typedTextSpan = document.querySelector('.typed-text');
-      const cursorSpan = document.querySelector('.cursor');
+  <!-- JavaScript code for the typing effect -->
+  <script>
+    const typedTextSpan = document.querySelector('.typed-text');
+    const cursorSpan = document.querySelector('.cursor');
 
-      const textArray = ["Hi, my name is Amani"]; 
-      const typingDelay = 100;
-      const erasingDelay = 100;
-      const newTextDelay = 2000;
-      let textArrayIndex = 0;
-      let charIndex = 0;
+    const textArray = ["Hi, my name is Amani"]; 
+    const typingDelay = 100;
+    const erasingDelay = 100;
+    const newTextDelay = 2000;
+    let textArrayIndex = 0;
+    let charIndex = 0;
 
-      function type() {
-        if (charIndex < textArray[textArrayIndex].length) {
-          if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-          typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-          charIndex++;
-          setTimeout(type, typingDelay);
-        } else {
-          cursorSpan.classList.remove('typing');
-          setTimeout(erase, newTextDelay);
-        }
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        cursorSpan.classList.remove('typing');
+        setTimeout(erase, newTextDelay);
       }
+    }
 
-      function erase() {
-        if (charIndex > 0) {
-          if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-          typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-          charIndex--;
-          setTimeout(erase, erasingDelay);
-        } else {
-          cursorSpan.classList.remove('typing');
-          textArrayIndex++;
-          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-          setTimeout(type, typingDelay + 1100);
-        }
+    function erase() {
+      if (charIndex > 0) {
+        if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        cursorSpan.classList.remove('typing');
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 1100);
       }
+    }
 
-      document.addEventListener('DOMContentLoaded', function() {
-        if (textArray.length) setTimeout(type, newTextDelay + 250);
-      });
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+  </script>
   </body>
 </html>
 
