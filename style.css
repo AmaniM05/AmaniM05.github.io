@@ -83,6 +83,146 @@
       #sidemenu li a:hover::after {
         transform: scaleX(1);
       }
+      nav {
+        position: center;
+      }
+      
+      nav::before {
+        content: '';
+        position: absolute;
+        top: calc(100% + 5px); 
+        left: 0;
+        width: fit-content; 
+        padding: 20px 20px; 
+        background-color: #ede0e0;
+        border-radius: 10px;
+        z-index: -1; 
+      }
+      .nav {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .nav::before {
+        content: '';
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        width: fit-content;
+        padding: 20px 20px;
+        background-color: #ede0e0;
+        border-radius: 10px;
+        z-index: -1;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+      }
+      
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      
+      nav ul li {
+        margin: 10px;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+      }
+      
+      nav ul li a::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: rgb(213, 80, 185), 185, 195);
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+      }
+      
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        background-color: rgb(96, 26, 65);  
+        padding: 10px; 
+        border-radius: 10px; 
+      }
+      
+      nav ul li {
+        margin: 10px;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+      }
+      
+      nav ul li a::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: rgb(213, 80, 185), 185, 195);
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+      }
+      
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px; 
+      }
+      
+      nav ul {
+        display: flex;
+        list-style: none;
+        background-color: rgb(96, 26, 65);
+        padding: 10px;
+        border-radius: 10px;
+      }
+      
+      nav ul li {
+        margin: 10px;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+      }
+      
+      nav ul li a::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: rgb(213, 80, 185), 185, 195);
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+      }
+      
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+      
     /* -----------about---------- */
     #about{
         padding: 80px 0;
@@ -163,8 +303,8 @@
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
-    transition: background 0.5s, transform 0.5s, box-shadow 0.5s; /* Add box-shadow to the transition */
-    box-shadow: 0 0 20px rgba(218, 62, 150, 0.5); /* Initial box-shadow for the glow effect */
+    transition: background 0.5s, transform 0.5s, box-shadow 0.5s; 
+    box-shadow: 0 0 20px rgba(218, 62, 150, 0.5); 
   }
   
   .services-list div i {
@@ -189,7 +329,7 @@
   .services-list div:hover {
     background: rgb(242, 240, 240);
     transform: translate(-10px);
-    box-shadow: 0 0 20px rgba(218, 62, 150, 0.7); /* Updated box-shadow for the glow effect on hover */
+    box-shadow: 0 0 20px rgba(218, 62, 150, 0.7); 
     cursor: pointer;
   }
   #sidemenu li a:hover {
@@ -440,7 +580,7 @@
         50% { border-color: rgb(255, 0, 183); }
       }
       .container {
-        margin-bottom: 20px; /* Add margin at the bottom of each container */
+        margin-bottom: 20px; 
       }
       /* Add pink glow around the video
       video {
@@ -448,8 +588,8 @@
       }*/
 
       h1.sub-title {
-        margin-bottom: 20px; /* Add margin at the bottom of the h1 element */
-      }
+        margin-bottom: 20px; 
+
       
       
      
@@ -458,6 +598,10 @@
  
       
       
+ 
+
+    
+
  
 
     
