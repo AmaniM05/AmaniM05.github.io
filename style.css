@@ -1,4 +1,4 @@
-  * {
+  /* {
         margin: 0;
         padding: 0;
         font-family: 'Poppins', sans-serif;
@@ -224,7 +224,7 @@
       }
       
     /* -----------about---------- */
-    #about{
+    /*#about{
         padding: 80px 0;
         color: #fff;
     }
@@ -287,7 +287,7 @@
         display: block;
     }
     /*--------------services-------------*/
-#services {
+/*#services {
     padding: 30px 0;
   }
   
@@ -337,7 +337,7 @@
   }
   
     /*--------Portfolio--------*/
-    #Portfolio{
+    /*#Portfolio{
         padding: 50px 0;
     }
     .work-list{
@@ -413,7 +413,7 @@
     }
     
     /*-----------------contact--------------*/
-    .contact-left{
+    /*.contact-left{
         flex-basis: 35%;
     }
     .contact-right{
@@ -478,7 +478,7 @@
         color: rgb(218, 62, 150);
     }
     /*-------------css for small screen-----------*/
-   nav .fas{
+   /*nav .fas{
     display: none;
    }
    
@@ -559,7 +559,7 @@
         white-space: nowrap;
         margin: 0 auto;
         letter-spacing: .05em; /* Adjust the letter spacing as needed */
-        animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        /*animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
       }
 
       .header-text .container {
@@ -585,10 +585,10 @@
       /* Add pink glow around the video
       video {
         box-shadow: 5px 5px 5px 3px rgb(255, 0, 183); /* Add a pink glow effect */
-      }*/
+      /*}*/
 
-      h1.sub-title {
-        margin-bottom: 20px; 
+      /* h1.sub-title {
+        margin-bottom: 20px; */
 
       
       
