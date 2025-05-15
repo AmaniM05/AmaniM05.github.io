@@ -1,113 +1,203 @@
-.experience-section {
-  background-color: #ffffff;
-  padding: 60px 0;
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
+/* Color Theme */
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #6c757d;
+  --accent-color: #ff7e5f;
+  --light-bg: #f8f9fa;
+  --dark-text: #212529;
+}
+
+/* Navigation */
+.navbar {
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.nav-link {
+  color: var(--dark-text);
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  padding: 80px 0;
+  background-color: var(--light-bg);
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+}
+
+/* Timeline Styles */
 .timeline {
   position: relative;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
-  width: 90%;
-  max-width: 900px;
 }
 
-.timeline::before {
+.timeline::after {
   content: '';
   position: absolute;
+  width: 2px;
+  background-color: var(--primary-color);
   top: 0;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background-color: #c5bfff;
+  margin-left: -1px;
 }
 
 .timeline-item {
+  padding: 10px 40px;
   position: relative;
   width: 50%;
-  padding: 20px;
+  box-sizing: border-box;
 }
 
-.timeline-item.left {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-item.right {
-  left: 50%;
-  text-align: left;
-}
-
-.timeline-marker {
+.timeline-item::after {
+  content: '';
   position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 20px;
   height: 20px;
-  background-color: #c5bfff;
+  background-color: white;
+  border: 3px solid var(--primary-color);
   border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 2px #c5bfff;
+  top: 15px;
   z-index: 1;
 }
 
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::after {
+  right: -10px;
+}
+
+.right::after {
+  left: -10px;
+}
+
 .timeline-content {
-  background: #fdfdfd;
   padding: 20px;
-  border-radius: 8px;
-  position: relative;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-  width: calc(100% - 40px);
-  display: inline-block;
-}
-
-.timeline-item.left .timeline-content {
-  float: right;
-  clear: both;
-}
-
-.timeline-item.right .timeline-content {
-  float: left;
-  clear: both;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
 .timeline-content:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
 }
 
-.timeline-content h5 {
-  margin-bottom: 5px;
+.timeline-content h4 {
+  margin-top: 0;
+  color: var(--primary-color);
 }
 
-.timeline-content small {
-  color: #6c757d;
+.text-muted {
+  color: var(--secondary-color) !important;
 }
 
-/* Responsive: stack items on small screens */
+/* Other Sections */
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.tech-icon {
+  background-color: white;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin: 5px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.bg-light {
+  background-color: var(--light-bg) !important;
+}
+
+footer {
+  background-color: var(--dark-text);
+  color: white;
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  .timeline-item,
-  .timeline-item.left,
-  .timeline-item.right {
+  .timeline::after {
+    left: 31px;
+  }
+  
+  .timeline-item {
     width: 100%;
-    left: 0;
-    text-align: left;
+    padding-left: 70px;
+    padding-right: 25px;
   }
-
-  .timeline-content {
-    float: none !important;
-    width: 100%;
+  
+  .timeline-item::after {
+    left: 21px;
   }
-
-  .timeline::before {
-    left: 20px;
+  
+  .left::after, .right::after {
+    left: 21px;
   }
-
-  .timeline-marker {
-    left: 20px;
-    transform: none;
+  
+  .right {
+    left: 0%;
   }
 }
