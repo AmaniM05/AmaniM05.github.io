@@ -1,17 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amani M - Software Engineering Student</title>
+  <title>Jane Porter - UX Designer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fc;
+    }
+    .hero {
+      background: #eef1fc;
+      padding: 60px 0;
+    }
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .tech-icon {
+      padding: 15px;
+      margin: 10px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .experience-section {
+      background-color: #ffffff;
+      padding: 60px 0;
+    }
+    .experience-item {
+      border-left: 4px solid #0d6efd;
+      padding: 20px;
+      margin-bottom: 30px;
+      background: #fdfdfd;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .experience-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .experience-item h5 {
+      margin-bottom: 5px;
+    }
+    .experience-item small {
+      color: #6c757d;
+    }
+    #contact {
+      background-color: #eef1fc;
+      padding: 60px 0;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">AM</a>
+      <a class="navbar-brand fw-bold" href="#">JP</a>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
@@ -22,16 +79,16 @@
 
   <section class="hero text-center">
     <div class="container">
-      <h1 class="display-5">Hi, I'm <span class="text-primary fw-bold">Amani M</span></h1>
-      <p class="lead">Software Engineering Student</p>
+      <h1 class="display-5">Hi, I'm <span class="text-primary fw-bold">Jane Porter</span></h1>
+      <p class="lead">UX Designer & Frontend Developer</p>
       <p class="mx-auto" style="max-width: 600px">
-        I’m a motivated Software Engineering student completing my 2nd year at uOttawa. I have 8 months, and counting, of coop experience supporting digital transformations in the federal government.
+        I create thoughtful digital experiences that connect people with products. With over 5 years of experience in design and development, I focus on creating solutions that are both beautiful and functional.
       </p>
       <div class="my-3">
         <a href="#contact" class="btn btn-primary me-2">Get in touch</a>
         <a href="#projects" class="btn btn-outline-primary">View my work</a>
       </div>
-      <img src="https://via.placeholder.com/200" alt="Amani M" class="profile-img mt-4" />
+      <img src="https://via.placeholder.com/200" alt="Jane Porter" class="profile-img mt-4" />
     </div>
   </section>
 
@@ -39,13 +96,11 @@
     <h5 class="text-muted mb-4">SKILLS & TECHNOLOGIES</h5>
     <div class="d-flex justify-content-center flex-wrap">
       <div class="tech-icon">UI/UX Design</div>
+      <div class="tech-icon">Figma</div>
       <div class="tech-icon">HTML/CSS</div>
-      <div class="tech-icon">Python</div>
-      <div class="tech-icon">Java</div>
-      <div class="tech-icon">Azure cloud technologies</div>
-      <div class="tech-icon">Data Analysis/Reporting</div>
-      <div class="tech-icon">Information Management</div>
-
+      <div class="tech-icon">JavaScript</div>
+      <div class="tech-icon">React</div>
+      <div class="tech-icon">Responsive</div>
     </div>
   </section>
 
@@ -53,7 +108,7 @@
     <div class="container">
       <h2 class="text-center mb-5">Experience</h2>
       <div class="experience-item">
-        <h5>IT Analyst (Cloud Data Platform) <small class="d-block"> 8 month coop / Jan 2025 - Present</small></h5>
+        <h5>IT Analyst (Cloud Data Platform) <small class="d-block">8 month coop / Jan 2025 - Present</small></h5>
         <p>Working with startups and agencies to create intuitive, user-centered digital products across mobile and web platforms.</p>
       </div>
       <div class="experience-item">
@@ -61,38 +116,27 @@
         <p>Led design projects from concept to delivery, collaborating with cross-functional teams to improve user satisfaction and brand consistency.</p>
       </div>
       <div class="experience-item">
-        <h5>Information Management Analyst <small class="d-block"> 4 month coop / May 2024 - Aug 2024</small></h5>
+        <h5>Information Management Analyst <small class="d-block">4 month coop / May 2024 - Aug 2024</small></h5>
         <p>Assisted in wireframing, prototyping, and user testing for client projects, gaining hands-on experience in the design process.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="py-5 bg-light">
+  <section id="contact">
     <div class="container">
-      <h2 class="text-center mb-4">Contact</h2>
-      <p class="text-center mb-5">nkfjrnekfbekfnehrf</p>
+      <h2 class="text-center mb-5">Contact</h2>
       <div class="row justify-content-center">
-        <div class="col-md-8">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Jane Doe" />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Your Email</label>
-              <input type="email" class="form-control" id="email" placeholder="jane@example.com" />
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="5" placeholder="What's on your mind?"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </div>
+        <div class="col-md-6">
+          <form class="contact-form">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+            <input type="email" class="form-control" placeholder="Your Email" required>
+            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn btn-primary mt-3">Send Message</button>
           </form>
         </div>
       </div>
     </div>
   </section>
+
 </body>
 </html>
