@@ -1,53 +1,126 @@
-<!-- Same <head> and navbar -->
-<section class="projects-section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Amani M</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style>    
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
     <div class="container">
-      <h2>Projects & Passions</h2>
-      <p class="subtitle">A collection of my favorite projects and personal interests that showcase my creativity and technical skills.</p>
+      <a class="navbar-brand fw-bold" href="home.html">AM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="projects-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Projects & Passions</h2>
+      <p class="subtitle text-center mb-5">A collection of my favorite projects and personal interests that showcase my creativity and technical skills.</p>
       
       <div class="projects-grid">
-        Project 1 
+        <!-- Project 1 -->
         <div class="project-card">
-          <img src="images/ecommerce-app.png" alt="E-commerce App Redesign">
+          <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 1" class="img-fluid">
+          </div>
           <div class="project-content">
-            <h3>E-commerce App Redesign</h3>
+            <h3>Project 1</h3>
             <span class="tag ux">UX Design</span>
-            <p>Complete redesign of a mobile shopping application, focusing on simplifying the checkout process and improving product discovery.</p>
-            <a href="#">View Project →</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim. </p>
+            <a href="#" class="text-decoration-none" style="color: var(--wine-red);">View Project →</a>
           </div>
         </div>
   
-         Project 2 
+        <!-- Project 2 -->
         <div class="project-card">
-          <img src="images/analytics-dashboard.png" alt="Analytics Dashboard">
+          <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 2" class="img-fluid">
+          </div>
           <div class="project-content">
-            <h3>Analytics Dashboard</h3>
+            <h3>Project 2</h3>
             <span class="tag frontend">Frontend</span>
-            <p>A responsive dashboard for visualizing complex data sets, built with React and D3.js for dynamic and interactive data representation.</p>
-            <a href="#">View Project →</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim. </p>
+            <a href="#" class="text-decoration-none" style="color: var(--wine-red);">View Project →</a>
           </div>
         </div>
   
-         Project 3 
+        <!-- Project 3 -->
         <div class="project-card">
-          <img src="images/wellness-platform.png" alt="Wellness Platform">
+          <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 3" class="img-fluid">
+          </div>
           <div class="project-content">
-            <h3>Wellness Platform</h3>
+            <h3>Project 3</h3>
             <span class="tag web">Web Design</span>
-            <p>A comprehensive website for a wellness brand, featuring a clean, calming aesthetic that aligns with the brand’s focus on mindfulness and self-care.</p>
-            <a href="#">View Project →</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim. </p>
+            <a href="#" class="text-decoration-none" style="color: var(--wine-red);">View Project →</a>
           </div>
         </div>
   
-         Project 4 
+        <!-- Project 4 -->
         <div class="project-card">
-          <img src="images/photography-portfolio.png" alt="Photography Portfolio">
+          <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 4" class="img-fluid">
+          </div>
           <div class="project-content">
-            <h3>Photography Portfolio</h3>
+            <h3>Project 4</h3>
             <span class="tag personal">Personal</span>
-            <p>A personal photography portfolio showcasing my passion for landscape and street photography, with a focus on immersive viewing.</p>
-            <a href="#">View Project →</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim. </p>
+            <a href="#" class="text-decoration-none" style="color: var(--wine-red);">View Project →</a>
           </div>
         </div>
 
+        <!-- Project 5 -->
+        <div class="project-card">
+          <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 5" class="img-fluid">
+          </div>
+          <div class="project-content">
+            <h3>Project 5</h3>
+            <span class="tag uiux">UI/UX</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim. </p>
+            <a href="#" class="text-decoration-none" style="color: var(--wine-red);">View Project →</a>
+          </div>
+        </div>
 
-<!-- Footer -->
+        <!-- Project 6 -->
+        <div class="project-card">
+          <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 6" class="img-fluid">
+          </div>
+          <div class="project-content">
+            <h3>Project 6</h3>
+            <span class="tag art">Art</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim. </p>
+            <a href="#" class="text-decoration-none" style="color: var(--wine-red);">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="m-0">&copy; 2025 Amani Mohamed. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,17 +1,112 @@
-<!-- Same <head> and navbar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Amani M</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="home.html">AM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<section id="contact" class="container py-5 bg-light">
-  <h2 class="text-center mb-5">Contact</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title">Get In Touch</h5>
-          <p class="card-text">Email: <a href="mailto:mmoha145@uottawa.ca">mmoha145@uottawa.ca</a></p>
+  <section id="contact" class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <h2 class="display-5 fw-bold mb-3">Get In Touch</h2>
+        <p class="lead text-muted">Have a question or want to work together? Feel free to reach out!</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-5">
+            <div class="contact-info text-center mb-5">
+              <div class="icon-box bg-primary-light mb-4 mx-auto">
+                <i class="fas fa-envelope text-primary"></i>
+              </div>
+              <h4 class="mb-3">Email Me</h4>
+              <div class="d-flex justify-content-center align-items-center">
+                <input type="text" class="form-control copy-email" value="nmoha145@uottawa.ca" readonly style="max-width: 250px;">
+                <button class="btn btn-primary ms-2 copy-btn">
+                  <i class="fas fa-copy"></i>
+                </button>
+                <a href="mailto:nmoha145@uottawa.ca" class="btn btn-outline-primary ms-2">
+                  <i class="fas fa-paper-plane"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form">
+              <h4 class="text-center mb-4"></h4>
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Your Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
+  <footer class="py-4 text-center text-muted">
+    <div class="container">
+      <div class="social-links mb-3">
+        <a href="#" class="text-decoration-none mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="#" class="text-decoration-none mx-2"><i class="fab fa-github fa-lg"></i></a>
+        <a href="#" class="text-decoration-none mx-2"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+      <p>&copy; 2025 Amani Mohamed. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Copy email functionality
+    document.querySelector('.copy-btn').addEventListener('click', function() {
+      const emailInput = document.querySelector('.copy-email');
+      emailInput.select();
+      document.execCommand('copy');
+      
+      const originalText = this.innerHTML;
+      this.innerHTML = '<i class="fas fa-check"></i>';
+      
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
