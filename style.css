@@ -11,7 +11,7 @@ body {
   --secondary-color: #611427;     /* Wine */
   --accent-color-1: #d9b99b;      /* Rust */
   --accent-color-2: #49471D;      /* Drab Dark Brown */
-  --accent-color-3: #5A85C1;      /* Silver Lake Blue */
+  --accent-color-3: #611427;      /* Silver Lake Blue */
   --background-color: #fefaf6;
   --text-color: #333;
   --card-bg: #ffffff;
@@ -178,8 +178,8 @@ section {
 }
 
 footer {
-  background-color: #a59978;
-  color: #ae967b; /* warm dark brown text */
+  background-color: #0c0901;
+  color: #130b02; /* warm dark brown text */
     padding: 2rem 0;
 
 }
