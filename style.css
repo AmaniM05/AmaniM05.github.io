@@ -122,7 +122,7 @@ body {
   padding: 20px;
   background-color: white;
   border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(244, 166, 192, 0.2); /* pink glow */
   transition: transform 0.3s ease;
 }
 
@@ -150,7 +150,7 @@ body {
 }
 
 .tech-icon {
-  background-color: white;
+  background-color: #fffafc; /* soft background */
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   border-radius: 20px;
