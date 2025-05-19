@@ -7,12 +7,13 @@ body {
 
 /* Color Theme */
 :root {
-  --primary-color: #4a6fa5;
-  --secondary-color: #6c757d;
-  --accent-color: #ff7e5f;
-  --light-bg: #f8f9fa;
-  --dark-text: #212529;
+  --primary-color: #f4a6c0; /* Light pink */
+  --secondary-color: #a3a9c9; /* Soft lavender-blue */
+  --accent-color: #ffdac1; /* Pastel peach */
+  --light-bg: #fff0f5; /* Lavender blush (light pink bg) */
+  --dark-text: #5c5c5c; /* Softer than black for better contrast with pastels */
 }
+
 
 /* Navigation */
 .navbar {
