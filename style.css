@@ -36,7 +36,7 @@ body {
 /* Hero Section */
 .hero {
   padding: 80px 0;
-  background-color: var(--light-bg);
+  background-color: #ffe4ec;
 }
 
 .text-primary {
@@ -170,7 +170,7 @@ section {
 }
 
 .bg-light {
-  background-color: var(--light-bg) !important;
+  background-color: #fff7fa
 }
 
 footer {
