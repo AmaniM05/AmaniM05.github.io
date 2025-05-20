@@ -6,6 +6,88 @@
   <title>Home - Amani</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <style>
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .about-section, .work-section {
+      padding: 60px 0;
+    }
+    .work-process {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .process-step {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .process-step:hover {
+      transform: translateY(-5px);
+    }
+    .process-step h5 {
+      color: #0d6efd;
+      border-bottom: 2px solid #0d6efd;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .workflow-title {
+      position: relative;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .workflow-title h3 {
+      display: inline-block;
+      background: white;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .workflow-title:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #0d6efd, #6c757d);
+      z-index: 0;
+    }
+    .step-number {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: #0d6efd;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 10px;
+    }
+    .tech-icon {
+      margin: 8px;
+      padding: 8px 15px;
+      background: #f8f9fa;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .tech-icon:hover {
+      background: #0d6efd;
+      color: white;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -30,11 +112,12 @@
   <!-- Hero -->
   <section class="hero text-center py-5 bg-light">
     <div class="container">
+      <!-- <img src="" alt="Amani" class="profile-img mb-4">-->
       <h1 class="display-5">Hi, I'm <span class="text-primary fw-bold">Amani</span></h1>
-      <p class="lead">Software Engineering Student</p>
+      <p class="lead">Software Engineering Student & Aspiring UI/UX Designer</p>
       <p class="mx-auto" style="max-width: 600px">
         Software Engineering student with Level II Secret Security clearance and experience in Azure cloud services, 
-        software development, data analysis, and automation...
+        software development, data analysis, and automation.
       </p>
       <div class="my-3">
         <a href="contact.html" class="btn btn-primary me-2">Contact Me</a>
@@ -43,7 +126,7 @@
     </div>
   </section>
 
-  <section id="skills" class="container text-center py-5 bg-light">
+  <section id="skills" class="container text-center py-5">
     <h5 class="text-muted mb-4">SKILLS & TECHNOLOGIES</h5>
     <div class="d-flex justify-content-center flex-wrap">
       <div class="tech-icon">Java</div>
@@ -56,6 +139,109 @@
       <div class="tech-icon">VSCode</div>
       <div class="tech-icon">pandas</div>
       <div class="tech-icon">Matplotlib</div>
+      <div class="tech-icon">Figma</div>
+      <div class="tech-icon">UX Principles</div>
+    </div>
+  </section>
+
+  <!-- About You Section -->
+  <section class="about-section container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="mb-4">About Me</h2>
+        <p>I'm a passionate software engineering student with a unique combination of interests - I spend my free time exploring web design and development, while actively working toward a career in data science. This blend of creative and analytical pursuits allows me to approach problems from multiple perspectives.</p>
+        <p>My technical skills span across software development, cloud technologies and data analysis, but I'm particularly fascinated by the intersection of technology and human-centered design.</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="https://images.unsplash.com/photo-1555066931-bf19f8fd1085?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Working on design" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- How You Work Section -->
+  <section class="work-section bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">My Design Approach</h2>
+      
+      <div class="work-process">
+        <h4 class="mb-4">Currently Learning UI/UX Design</h4>
+        <p>While I'm primarily a software engineering student, I'm currently expanding my skillset by taking a comprehensive design course called "Analysis and Design of User Interfaces". This course covers fundamental design principles, user research methods, and industry-standard tools.</p>
+        <p>Some of the other resources I'm using include:</p>
+        <ul>
+          <li><a href="https://www.w3schools.com/" target="_blank">w3schools.com</a> - For learning web development languages and frameworks</li>
+          <li><a href="https://shiftnudge.com/figma" target="_blank">shiftnudge.com</a> - For comprehensive design courses</li>
+          <li>Various online tutorials and design challenges</li>
+        </ul>
+      </div>
+
+      <div class="workflow-title">
+        <h3 class="fw-bold">My Design Workflow</h3>
+      </div>
+
+      <section class="design-workflow">
+  <div class="container">
+    <h2>My Design Approach</h2>
+    
+    <div class="workflow-intro">
+      <h3>Currently Learning UI/UX Design</h3>
+      <p>While I'm primarily a software engineering student, I'm currently expanding my skillset by taking a comprehensive design course called "Analysis and Design of User Interfaces". This course covers fundamental design principles, user research methods, and industry-standard tools.</p>
+      <p>Some of the other resources I'm using include:</p>
+      <ul>
+        <li><a href="https://www.w3schools.com/" target="_blank">w3schools.com</a> - For learning web development languages and frameworks</li>
+        <li><a href="https://shiftnudge.com/figma" target="_blank">shiftnudge.com</a> - For comprehensive design courses</li>
+        <li>Various online tutorials and design challenges</li>
+      </ul>
+    </div>
+
+    <div class="workflow-title">
+      <h3>My Design Workflow</h3>
+    </div>
+
+    <div class="workflow-steps">
+      <div class="process-step">
+        <h4>1</span> Research & Discovery</h4>
+        <p>Understanding user needs through surveys, interviews, and market analysis. Learning to create user personas and journey maps.</p>
+        <div class="step-tags">
+          <span class="step-tag">User Research</span>
+          <span class="step-tag">Competitive Analysis</span>
+          <span class="step-tag">Personas</span>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <h4>2</span> Wireframing & Prototyping</h4>
+        <p>Developing low-fidelity wireframes to explore layout options before moving to interactive prototypes using tools like Figma.</p>
+        <div class="step-tags">
+          <span class="step-tag">Figma</span>
+          <span class="step-tag">Sketching</span>
+          <span class="step-tag">Information Architecture</span>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <h4>3</span> User Testing</h4>
+        <p>Applying heuristic evaluation principles and conducting usability tests to refine designs based on real user feedback.</p>
+        <div class="step-tags">
+          <span class="step-tag">Usability Testing</span>
+          <span class="step-tag">A/B Testing</span>
+          <span class="step-tag">Feedback Analysis</span>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <h4>4</span> Implementation</h4>
+        <p>Leveraging my coding skills to bring designs to life while ensuring technical feasibility and performance.</p>
+        <div class="step-tags">
+          <span class="step-tag">HTML/CSS</span>
+          <span class="step-tag">JavaScript</span>
+          <span class="step-tag">Accessibility</span>
+        </div>
+      </div>
+    </div>
+
+      <div class="alert alert-info mt-4">
+        <strong>Note:</strong> As I progress through my course, I'll be adding more concepts to my workflow including accessibility standards, design systems, and advanced prototyping techniques.
+      </div>
     </div>
   </section>
 
