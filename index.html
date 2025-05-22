@@ -3,155 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Amani</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <title>Amani - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">AM</a>
+      <a class="navbar-brand fw-bold" href="#">AM</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero text-center py-5 bg-light">
-    <div class="container">
-      <!-- <img src="" alt="Amani" class="profile-img mb-4">-->
-      <h1 class="display-5">Hi, I'm <span class="custom-highlight fw-bold">Amani</span></h1>
-      <p class="lead">Software Engineering Student & Aspiring UI/UX Designer</p>
-      <p class="mx-auto" style="max-width: 600px">
-        Software Engineering student with Level II Secret Security clearance and experience in Azure cloud services, 
-        software development, data analysis, and automation.
-      </p>
-      <div class="my-3">
-        <a href="contact.html" class="btn custom-btn me-2">Contact Me</a>
-        <a href="experience.html" class="btn custom-btn-outline">My Experience</a>
-      </div>
-    </div>
+  <!-- About Me Section -->
+  <section id="about" class="py-5">
+    <div class="container text-center">
+  <h2 class="fw-bold mb-4">About Me</h2>
+  <div class="mb-4">
+    <img src="images/JPEG.jpeg" alt="Profile picture of Amani" class="rounded-circle img-fluid shadow" style="width: 150px; height: 150px; object-fit: cover;" />
+  </div>
+  <p class="mx-auto" style="max-width: 700px;">
+    I'm Amani Mohamed, a software engineering student passionate about creating intuitive web applications and beautiful user experiences. I blend technical skill with design creativity to build solutions that are both functional and user-centered.
+  </p>
+</div>
+
   </section>
 
-  <section id="skills" class="container text-center py-5">
-    <h5 class="text-muted mb-4">SKILLS & TECHNOLOGIES</h5>
-    <div class="d-flex justify-content-center flex-wrap">
-      <div class="tech-icon">Java</div>
-      <div class="tech-icon">Python</div>
-      <div class="tech-icon">SQL</div>
-      <div class="tech-icon">HTML/CSS</div>
-      <div class="tech-icon">Azure</div>
-      <div class="tech-icon">Power Automate</div>
-      <div class="tech-icon">Power BI</div>
-      <div class="tech-icon">VSCode</div>
-      <div class="tech-icon">pandas</div>
-      <div class="tech-icon">Matplotlib</div>
-      <div class="tech-icon">Figma</div>
-      <div class="tech-icon">UX Principles</div>
-    </div>
-  </section>
+  <!-- Design Approach Section -->
+  <section id="design-approach" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">My Design Approach</h2>
 
-  <!-- About You Section -->
-  <section class="about-section container py-5">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h2 class="mb-4">About Me</h2>
-        <p>I'm a passionate software engineering student with a unique combination of interests - I spend my free time exploring web design and development, while actively working toward a career in data science. This blend of creative and analytical pursuits allows me to approach problems from multiple perspectives.</p>
-        <p>My technical skills span across software development, cloud technologies and data analysis, but I'm particularly fascinated by the intersection of technology and human-centered design.</p>
-      </div>
-      <div class="col-lg-6 text-center">
-        <img src="https://images.unsplash.com/photo-1555066931-bf19f8fd1085?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Working on design" class="img-fluid rounded shadow">
-      </div>
-    </div>
-  </section>
-
-  <!-- How You Work Section -->
-  <section class="work-section bg-light py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">My Design Approach</h2>
-      
-      <div class="work-process">
+      <div class="work-process mb-5">
         <h4 class="mb-4">Currently Learning UI/UX Design</h4>
-        <p>While I'm primarily a software engineering student, I'm currently expanding my skillset by taking a comprehensive design course called "Analysis and Design of User Interfaces". This course covers fundamental design principles, user research methods, and industry-standard tools.</p>
-        <p>Some of the other resources I'm using include:</p>
-        <ul>
-          <li><a href="https://www.w3schools.com/" target="_blank">w3schools.com</a> - For learning web development languages and frameworks</li>
-          <li><a href="https://shiftnudge.com/figma" target="_blank">shiftnudge.com</a> - For comprehensive design courses</li>
-          <li>Various online tutorials and design challenges</li>
+        <p class="mx-auto" style="max-width: 700px;">
+          I'm currently building my foundation in UI/UX through a course titled <strong>"Analysis and Design of User Interfaces"</strong>. This covers intuitive design, layout hierarchy, and more.
+        </p>
+        <p class="mx-auto" style="max-width: 700px;">
+          Outside of class, I practice through tutorials, design challenges, and tools like Figma.
+        </p>
+        <p class="fw-semibold">Resources I use:</p>
+        <ul class="list-unstyled">
+          <li><a href="https://www.w3schools.com/" target="_blank">w3schools.com</a></li>
+          <li><a href="https://shiftnudge.com/figma" target="_blank">shiftnudge.com</a></li>
+          <li>Daily UI challenges, Frontend Mentor, and community feedback</li>
         </ul>
       </div>
-
-      <div class="workflow-title">
-        <h3 class="fw-bold">My Design Workflow</h3>
-      </div>
-
-      <section class="design-workflow">
-        <div class="container">
-          <div class="workflow-steps">
-            <div class="process-step">
-              <h4>1. Research & Discovery</h4>
-              <p>Understanding user needs through surveys, interviews, and market analysis. Learning to create user personas and journey maps.</p>
-              <div class="step-tags">
-                <span class="step-tag">User Research</span>
-                <span class="step-tag">Competitive Analysis</span>
-                <span class="step-tag">Personas</span>
-              </div>
-            </div>
-            
-            <div class="process-step">
-              <h4>2. Wireframing & Prototyping</h4>
-              <p>Developing low-fidelity wireframes to explore layout options before moving to interactive prototypes using tools like Figma.</p>
-              <div class="step-tags">
-                <span class="step-tag">Figma</span>
-                <span class="step-tag">Sketching</span>
-                <span class="step-tag">Information Architecture</span>
-              </div>
-            </div>
-            
-            <div class="process-step">
-              <h4>3. User Testing</h4>
-              <p>Applying heuristic evaluation principles and conducting usability tests to refine designs based on real user feedback.</p>
-              <div class="step-tags">
-                <span class="step-tag">Usability Testing</span>
-                <span class="step-tag">A/B Testing</span>
-                <span class="step-tag">Feedback Analysis</span>
-              </div>
-            </div>
-            
-            <div class="process-step">
-              <h4>4. Implementation</h4>
-              <p>Leveraging my coding skills to bring designs to life while ensuring technical feasibility and performance.</p>
-              <div class="step-tags">
-                <span class="step-tag">HTML/CSS</span>
-                <span class="step-tag">JavaScript</span>
-                <span class="step-tag">Accessibility</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom-alert mt-4">
-            <strong>Note:</strong> As I progress through my course, I'll be adding more concepts to my workflow including accessibility standards, design systems, and advanced prototyping techniques.
-          </div>
-        </div>
-      </section>
     </div>
   </section>
 
-  <footer class="py-4 text-center text-muted">
-    <div class="container">
-      <p>&copy; 2025 Amani Mohamed. All rights reserved.</p>
+  <!-- Design Workflow Section -->
+  <section id="design-workflow" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">My Design Workflow</h2>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">1. Research & Discovery</h5>
+              <p class="card-text">Understanding user needs through surveys and interviews.</p>
+              <div class="step-tags">
+                <span class="badge bg-secondary">User Research</span>
+                <span class="badge bg-secondary">Personas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">2. Wireframing</h5>
+              <p class="card-text">Sketching ideas and structuring layouts with tools like Figma.</p>
+              <div class="step-tags">
+                <span class="badge bg-secondary">Low Fidelity</span>
+                <span class="badge bg-secondary">User Flows</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">3. Visual Design</h5>
+              <p class="card-text">Choosing colors, typography, and creating components with consistency.</p>
+              <div class="step-tags">
+                <span class="badge bg-secondary">Figma</span>
+                <span class="badge bg-secondary">Design Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">4. Prototype & Test</h5>
+              <p class="card-text">Building interactive mockups and gathering feedback from users.</p>
+              <div class="step-tags">
+                <span class="badge bg-secondary">Prototyping</span>
+                <span class="badge bg-secondary">Usability Testing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-alert mt-4">
+        <strong>Note:</strong> I’m continuing to expand my workflow with accessibility, design systems, and real-world projects.
+      </div>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 text-muted">
+    <div class="container">&copy; 2025 Amani Mohamed</div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
