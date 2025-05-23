@@ -352,7 +352,21 @@ section:not(:last-of-type)::after {
 /* Section headers */
 h2 {
   color: var(--red-wine);
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 6px solid var(--red-wine); /* defined as #800020 in your CSS */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+
 
     
 }
