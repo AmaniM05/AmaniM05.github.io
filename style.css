@@ -328,4 +328,30 @@ footer {
     height: 80px;
     padding: 10px;
   }
+
+  .skill-badge {
+  background-color: rgba(97, 20, 39, 0.1);
+  color: #611427;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #611427;
+  font-size: 0.9rem;
+}
+
+.method-icon {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.resource-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(97, 20, 39, 0.2);
+}
+
+.resource-grid {
+  display: grid;
+  gap: 15px;
+}
+
 }
