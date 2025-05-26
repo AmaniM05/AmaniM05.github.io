@@ -87,6 +87,7 @@ section:not(:last-of-type)::after {
 
 .nav-link:hover {
   color: var(--link-hover);
+  color: #234F1E
 }
 
 .navbar-light .navbar-nav .nav-link.active {
@@ -160,6 +161,7 @@ h2 {
 
 .card:hover {
   transform: translateY(-5px);
+  color: #234F1E
 }
 
 .tech-icon {
@@ -275,6 +277,7 @@ footer {
 
 .custom-btn:hover {
   background-color: #4a0f1f;
+  color: #234F1E
 }
 
 .custom-btn-outline {
@@ -286,6 +289,7 @@ footer {
 .custom-btn-outline:hover {
   background-color: var(--primary-color);
   color: white;
+  color: #234F1E
 }
 
 .custom-alert {
@@ -336,12 +340,19 @@ footer {
   border-radius: 20px;
   border: 1px solid #611427;
   font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.skill-badge:hover {
+  color: #234F1E
+  border-color: transparent;
 }
 
 .method-icon {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 1;
+  color: #234F1E
+  
 }
 
 .resource-item {
