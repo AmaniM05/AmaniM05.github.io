@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amani Mohamed — Portfolio</title>
+  <title>Amani Mohamed — BI Developer & Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -18,9 +18,6 @@
       --light: #e0e0e0;
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Inter', system-ui, sans-serif;
-      /* Very subtle pastel coral pink for background accents */
-      --coral-subtle: #fff4f0;
-      --coral-light: #ffddd3;
     }
 
     html { scroll-behavior: smooth; }
@@ -32,18 +29,6 @@
       font-size: 15px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      /* Subtle coral pink background wash */
-      background-image: radial-gradient(circle at 10% 20%, var(--coral-subtle) 0%, var(--white) 90%);
-      background-attachment: fixed;
-    }
-
-    /* Additional subtle coral touch on specific sections */
-    section:nth-child(even) { 
-      background: rgba(255, 245, 240, 0.5); 
-    }
-    
-    .hero, .project-card:hover, .course-pill:hover {
-      transition: all 0.2s ease;
     }
 
     /* ── NAV ── */
@@ -139,6 +124,7 @@
       padding: 88px 48px;
       border-bottom: 1px solid var(--light);
     }
+    section:nth-child(even) { background: var(--paper); }
 
     .section-header {
       display: flex;
@@ -206,7 +192,7 @@
       color: var(--grey);
       background: var(--white);
     }
-    section:nth-child(even) .tag { background: rgba(255, 245, 240, 0.8); }
+    section:nth-child(even) .tag { background: var(--paper); }
 
     /* ── SKILLS ── */
     .skills-grid {
@@ -243,7 +229,7 @@
       transition: background 0.2s;
       cursor: default;
     }
-    section:nth-child(even) .project-card { background: rgba(255, 248, 244, 0.8); }
+    section:nth-child(even) .project-card { background: var(--paper); }
     .project-card:hover { background: var(--black); }
     .project-card:hover .project-title,
     .project-card:hover .project-desc,
@@ -272,7 +258,7 @@
       color: var(--grey); transition: border-color 0.2s, color 0.2s;
     }
 
-    /* ── EDUCATION (for degree only) ── */
+    /* ── EDUCATION ── */
     .education-item {
       display: grid;
       grid-template-columns: 190px 1fr;
@@ -286,42 +272,7 @@
     .education-school { font-size: 13px; color: var(--grey); margin-bottom: 10px; }
     .education-detail { font-size: 14px; line-height: 1.7; color: #444; }
 
-    /* ── CERTIFICATES SECTION (new, smaller certs) ── */
-    .certificates-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-top: 20px;
-    }
-    .cert-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--light);
-    }
-    .cert-item:last-child { border-bottom: none; }
-    .cert-name {
-      font-family: var(--sans);
-      font-size: 15px;
-      font-weight: 500;
-      color: #2c2c2c;
-    }
-    .cert-meta {
-      font-size: 12px;
-      color: var(--grey);
-      text-align: right;
-    }
-    .cert-badge {
-      font-size: 11px;
-      background: var(--coral-light);
-      padding: 2px 8px;
-      border-radius: 20px;
-      color: #a0563a;
-      margin-left: 10px;
-    }
-
-    /* ── COURSEWORK (without units, removed term labels) ── */
+    /* ── COURSES ── */
     .courses-intro {
       font-size: 14px;
       color: var(--grey);
@@ -333,33 +284,32 @@
     }
     .courses-block:last-child { margin-bottom: 0; }
     .courses-year-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #a56b54;
-      margin-bottom: 18px;
+      color: var(--grey);
+      margin-bottom: 12px;
       padding-bottom: 8px;
-      border-bottom: 1px solid var(--coral-light);
+      border-bottom: 1px solid var(--light);
     }
-    /* removed semester/term labels — only course pills shown in a single grid */
-    .courses-pills-grid {
+    .courses-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      padding-top: 4px;
     }
     .course-pill {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 5px 14px 5px 12px;
+      gap: 6px;
+      padding: 5px 12px 5px 10px;
       border: 1px solid var(--light);
       background: var(--white);
       cursor: default;
       transition: background 0.15s, border-color 0.15s;
-      border-radius: 30px;
     }
-    section:nth-child(even) .course-pill { background: rgba(255, 245, 240, 0.6); }
+    section:nth-child(even) .course-pill { background: var(--paper); }
     .course-pill:hover { background: var(--black); border-color: var(--black); }
     .course-pill:hover .course-code,
     .course-pill:hover .course-name { color: var(--white); }
@@ -369,6 +319,7 @@
       letter-spacing: 0.07em;
       color: var(--grey);
       transition: color 0.15s;
+      white-space: nowrap;
     }
     .course-name {
       font-size: 12px;
@@ -376,6 +327,19 @@
       color: var(--black);
       transition: color 0.15s;
     }
+
+    /* ── CERTS ── */
+    .certs-list { display: flex; flex-direction: column; gap: 0; }
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--light);
+    }
+    .cert-item:last-child { border-bottom: none; }
+    .cert-name { font-family: var(--serif); font-size: 17px; font-weight: 400; }
+    .cert-meta { font-size: 12px; color: var(--grey); text-align: right; }
 
     /* ── CONTACT ── */
     .contact-inner { max-width: 640px; }
@@ -408,7 +372,6 @@
       padding: 28px 48px;
       display: flex; justify-content: space-between; align-items: center;
       font-size: 12px; color: var(--grey); letter-spacing: 0.04em;
-      background: rgba(255, 245, 240, 0.3);
     }
 
     /* ── SCROLL REVEAL ── */
@@ -430,7 +393,7 @@
       .skills-grid { grid-template-columns: 1fr 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       .education-item { grid-template-columns: 1fr; gap: 10px; }
-      .cert-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .cert-item { flex-direction: column; align-items: flex-start; gap: 4px; }
       footer { flex-direction: column; gap: 6px; text-align: center; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -449,15 +412,14 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#certificates">Certificates</a></li>
       <li><a href="#courses">Courses</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO (removed BI Developer/Software Engineer titles) -->
+  <!-- HERO -->
   <div class="hero">
-    <p class="hero-eyebrow">Ottawa, Canada</p>
+    <p class="hero-eyebrow">BI Developer · Software Engineer · Ottawa, Canada</p>
     <h1 class="hero-name">Amani Mohamed</h1>
     <p class="hero-tagline">Building data pipelines, cloud infrastructure, and business intelligence tools for the Government of Canada — and beyond.</p>
     <div class="hero-meta">
@@ -476,7 +438,7 @@
     </div>
   </div>
 
-  <!-- ABOUT (removed references to certs inside about) -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="section-header reveal">
       <span class="section-label">About</span>
@@ -486,7 +448,7 @@
       <div class="about-text reveal">
         <p>I'm heading into my fourth year of a BASc in Software Engineering at the University of Ottawa, with over a year of practical experience in cloud, data, and AI through government co-op placements.</p>
         <p>I'm proficient in the Microsoft ecosystem — Azure, Fabric, Power BI, Purview — and bring a software engineering mindset to every data problem: clean design, testable pipelines, and clear documentation.</p>
-        <p>I hold active government security clearance and deliver work in both official languages.</p>
+        <p>I hold a DELF B2 French Studies Diploma and a French Immersion Certificate, giving me the ability to deliver work and collaborate in both official languages.</p>
       </div>
       <div class="about-aside reveal">
         <div class="about-stat">
@@ -499,91 +461,471 @@
         </div>
         <div class="about-stat">
           <div class="about-stat-number">EN/FR</div>
-          <div class="about-stat-label">Bilingual (DELF B2 certified)</div>
+          <div class="about-stat-label">DELF B2 certified bilingual</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE (unchanged but no titles at top) -->
+  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-header reveal">
       <span class="section-label">Experience</span>
       <div class="section-rule"></div>
     </div>
     <div class="section-title reveal" style="margin-bottom: 44px;">Where I've worked.</div>
+
     <div class="experience-list">
+
       <div class="experience-item reveal">
-        <div class="experience-meta"><span class="experience-date">May 2026 – Present</span><span class="experience-type">Co-op</span><span class="experience-location">Ottawa, ON</span></div>
-        <div class="experience-content"><div class="experience-role">BI Developer</div><div class="experience-company">Public Services and Procurement Canada (PSPC) · Data Science & Business Intelligence</div><div class="experience-desc">Delivering enterprise BI solutions and stakeholder dashboards on the Microsoft stack. Data modelling, DAX development, and stakeholder engagement across the department.</div><div class="experience-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Stakeholder Engagement</span></div></div>
+        <div class="experience-meta">
+          <span class="experience-date">May 2026 – Present</span>
+          <span class="experience-type">Co-op</span>
+          <span class="experience-location">Ottawa, ON</span>
+        </div>
+        <div class="experience-content">
+          <div class="experience-role">BI Developer</div>
+          <div class="experience-company">Public Services and Procurement Canada (PSPC) · Data Science & Business Intelligence</div>
+          <div class="experience-desc">
+            Delivering enterprise BI solutions and stakeholder dashboards on the Microsoft stack. Responsible for data modelling, DAX development, and stakeholder engagement across the department.
+          </div>
+          <div class="experience-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Stakeholder Engagement</span>
+          </div>
+        </div>
       </div>
+
       <div class="experience-item reveal">
-        <div class="experience-meta"><span class="experience-date">Sep – Dec 2025</span><span class="experience-type">Co-op</span><span class="experience-location">Nepean, ON</span></div>
-        <div class="experience-content"><div class="experience-role">Data Engineer</div><div class="experience-company">Department of National Defence (DND) · DACD - Digital Services</div><div class="experience-desc">Built Fabric pipelines for enterprise datasets to support defence analytics. Catalogued datasets in Microsoft Purview for compliance.</div><div class="experience-tags"><span class="tag">Microsoft Fabric</span><span class="tag">Purview</span><span class="tag">Python</span><span class="tag">Data Governance</span></div></div>
+        <div class="experience-meta">
+          <span class="experience-date">Sep – Dec 2025</span>
+          <span class="experience-type">Co-op</span>
+          <span class="experience-location">Nepean, ON</span>
+        </div>
+        <div class="experience-content">
+          <div class="experience-role">Data Engineer</div>
+          <div class="experience-company">Department of National Defence (DND) · DACD - Digital Services</div>
+          <div class="experience-desc">
+            Built Fabric pipelines for enterprise datasets to support national defence analytics capability development. Catalogued and governed datasets in Microsoft Purview to reinforce compliance with government security and data management frameworks.
+          </div>
+          <div class="experience-tags">
+            <span class="tag">Microsoft Fabric</span>
+            <span class="tag">Microsoft Purview</span>
+            <span class="tag">Python</span>
+            <span class="tag">Technical Documentation</span>
+            <span class="tag">Data Governance</span>
+          </div>
+        </div>
       </div>
+
       <div class="experience-item reveal">
-        <div class="experience-meta"><span class="experience-date">Jan – Aug 2025</span><span class="experience-type">Co-op · Remote</span><span class="experience-location">Gatineau, QC</span></div>
-        <div class="experience-content"><div class="experience-role">Cloud Developer</div><div class="experience-company">Service Canada · Data Platform & AI Enablement</div><div class="experience-desc">Maintained CI/CD pipelines in Azure DevOps, RBAC permissions, automated ingestion with Python Azure Functions.</div><div class="experience-tags"><span class="tag">Azure DevOps</span><span class="tag">Azure Functions</span><span class="tag">Python</span><span class="tag">Synapse</span></div></div>
+        <div class="experience-meta">
+          <span class="experience-date">Jan – Aug 2025</span>
+          <span class="experience-type">Co-op · Remote</span>
+          <span class="experience-location">Gatineau, QC</span>
+        </div>
+        <div class="experience-content">
+          <div class="experience-role">Cloud Developer</div>
+          <div class="experience-company">Service Canada · Data Platform & AI Enablement</div>
+          <div class="experience-desc">
+            Maintained CI/CD pipelines in Azure DevOps and monitored Synapse workspaces and SQL pools. Managed RBAC permissions and conducted user access tests across the Azure ML workspace. Designed and implemented Python scripts for automated data ingestion, packaged and deployed as Azure Function Apps in a serverless architecture. Contributed to R&D of an external event monitor.
+          </div>
+          <div class="experience-tags">
+            <span class="tag">Azure DevOps</span>
+            <span class="tag">Azure ML</span>
+            <span class="tag">Azure Functions</span>
+            <span class="tag">Python</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">Synapse</span>
+          </div>
+        </div>
       </div>
+
       <div class="experience-item reveal">
-        <div class="experience-meta"><span class="experience-date">May – Aug 2024</span><span class="experience-type">Co-op</span><span class="experience-location">Ottawa, ON</span></div>
-        <div class="experience-content"><div class="experience-role">Information Management Analyst</div><div class="experience-company">Treasury Board of Canada Secretariat (TBS) · Corporate Services</div><div class="experience-desc">Cloud migration from on-premises to cloud, ensuring compliance with government data protection policies.</div><div class="experience-tags"><span class="tag">Power Platform</span><span class="tag">Cloud Migration</span><span class="tag">Data Protection</span></div></div>
+        <div class="experience-meta">
+          <span class="experience-date">May – Aug 2024</span>
+          <span class="experience-type">Co-op</span>
+          <span class="experience-location">Ottawa, ON</span>
+        </div>
+        <div class="experience-content">
+          <div class="experience-role">Information Management Analyst</div>
+          <div class="experience-company">Treasury Board of Canada Secretariat (TBS) · Corporate Services</div>
+          <div class="experience-desc">
+            Contributed to a major information migration from on-premises storage to the cloud, ensuring strict compliance with government data protection policies throughout the process.
+          </div>
+          <div class="experience-tags">
+            <span class="tag">Microsoft Power Platform</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Cloud Migration</span>
+            <span class="tag">Data Protection</span>
+          </div>
+        </div>
       </div>
+
       <div class="experience-item reveal">
-        <div class="experience-meta"><span class="experience-date">Sep 2025 – Feb 2026</span><span class="experience-type">Volunteer</span><span class="experience-location">Ottawa, ON</span></div>
-        <div class="experience-content"><div class="experience-role">ERTW Commissioner — Sponsorships</div><div class="experience-company">Engineering Students' Society, University of Ottawa</div><div class="experience-desc">Secured two new partnerships with local businesses for student community.</div><div class="experience-tags"><span class="tag">Negotiation</span><span class="tag">Partnerships</span></div></div>
+        <div class="experience-meta">
+          <span class="experience-date">Sep 2025 – Feb 2026</span>
+          <span class="experience-type">Volunteer</span>
+          <span class="experience-location">Ottawa, ON</span>
+        </div>
+        <div class="experience-content">
+          <div class="experience-role">ERTW Commissioner — Sponsorships</div>
+          <div class="experience-company">Engineering Students' Society, University of Ottawa</div>
+          <div class="experience-desc">
+            Secured two new partnerships with local businesses, generating exclusive promotions and discounts that directly benefit uOttawa's engineering student community.
+          </div>
+          <div class="experience-tags">
+            <span class="tag">Contract Negotiation</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Partnerships</span>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="section-header reveal"><span class="section-label">Skills</span><div class="section-rule"></div></div>
+    <div class="section-header reveal">
+      <span class="section-label">Skills</span>
+      <div class="section-rule"></div>
+    </div>
     <div class="skills-grid reveal">
-      <div class="skill-group"><div class="skill-group-name">Cloud & Data Platform</div><div class="skill-list"><span class="skill-item">Microsoft Azure</span><span class="skill-item">Microsoft Fabric</span><span class="skill-item">Azure DevOps</span><span class="skill-item">Azure Functions</span><span class="skill-item">Azure Synapse</span><span class="skill-item">Microsoft Purview</span></div></div>
-      <div class="skill-group"><div class="skill-group-name">BI & Analytics</div><div class="skill-list"><span class="skill-item">Power BI</span><span class="skill-item">DAX</span><span class="skill-item">Power Query</span><span class="skill-item">SQL / PostgreSQL</span><span class="skill-item">Data Modelling</span><span class="skill-item">CI/CD Pipelines</span></div></div>
-      <div class="skill-group"><div class="skill-group-name">Development</div><div class="skill-list"><span class="skill-item">Python</span><span class="skill-item">TypeScript / JavaScript</span><span class="skill-item">React / Next.js</span><span class="skill-item">Java</span><span class="skill-item">Git</span><span class="skill-item">Agile / Scrum</span></div></div>
+      <div class="skill-group">
+        <div class="skill-group-name">Cloud & Data Platform</div>
+        <div class="skill-list">
+          <span class="skill-item">Microsoft Azure</span>
+          <span class="skill-item">Microsoft Fabric</span>
+          <span class="skill-item">Azure DevOps</span>
+          <span class="skill-item">Azure Functions</span>
+          <span class="skill-item">Azure Synapse</span>
+          <span class="skill-item">Microsoft Purview</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">BI & Analytics</div>
+        <div class="skill-list">
+          <span class="skill-item">Power BI</span>
+          <span class="skill-item">DAX</span>
+          <span class="skill-item">Power Query</span>
+          <span class="skill-item">SQL / PostgreSQL</span>
+          <span class="skill-item">Data Modelling</span>
+          <span class="skill-item">CI/CD Pipelines</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Development</div>
+        <div class="skill-list">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">TypeScript / JavaScript</span>
+          <span class="skill-item">React / Next.js</span>
+          <span class="skill-item">Java</span>
+          <span class="skill-item">Git</span>
+          <span class="skill-item">Agile / Scrum</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-header reveal"><span class="section-label">Projects</span><div class="section-rule"></div></div>
-    <div class="section-title reveal" style="margin-bottom: 44px;">Things I've built.</div>
-    <div class="projects-grid">
-      <div class="project-card reveal"><div class="project-status">In Development</div><div class="project-title">OttawaMapd</div><div class="project-desc">Map-based discovery platform for Ottawa — events, deals, community listings.</div><div class="project-tags"><span class="project-tag">Next.js 14</span><span class="project-tag">Supabase</span><span class="project-tag">Mapbox</span></div></div>
-      <div class="project-card reveal"><div class="project-status">University of Ottawa</div><div class="project-title">Hotel Booking System</div><div class="project-desc">PostgreSQL reservation system with inventory, guest management.</div><div class="project-tags"><span class="project-tag">PostgreSQL</span><span class="project-tag">SQL</span></div></div>
-      <div class="project-card reveal"><div class="project-status">Government of Canada</div><div class="project-title">PSPC Financial Dashboard</div><div class="project-desc">Bilingual Power BI executive report with DAX measures.</div><div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span class="project-tag">EN/FR</span></div></div>
-      <div class="project-card reveal"><div class="project-status">Academic</div><div class="project-title">8-Queens Hill Climbing Solver</div><div class="project-desc">Concurrent Java implementation with multi-threaded search.</div><div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">Concurrency</span></div></div>
-    </div>
-  </section>
-
-  <!-- EDUCATION (only degree left, French immersion and DELF removed from here) -->
-  <section id="education">
-    <div class="section-header reveal"><span class="section-label">Education</span><div class="section-rule"></div></div>
-    <div class="experience-list">
-      <div class="education-item reveal"><div class="education-year">Sep 2023 – Dec 2027</div><div><div class="education-degree">BASc Computer Software Engineering (Co-op)</div><div class="education-school">University of Ottawa, Ottawa ON</div><div class="education-detail">Co-operative education program with placements across cloud, data engineering, and business intelligence roles in the federal government.</div></div></div>
-    </div>
-  </section>
-
-  <!-- NEW CERTIFICATES SECTION: French Immersion + DELF B2 + Secret Security Clearance -->
-  <section id="certificates">
     <div class="section-header reveal">
-      <span class="section-label">Certificates</span>
+      <span class="section-label">Projects</span>
       <div class="section-rule"></div>
     </div>
-    <div class="section-title reveal" style="font-size: 32px; margin-bottom: 20px;">Credentials & clearances</div>
-    <div class="certificates-list">
-      <div class="cert-item reveal"><span class="cert-name">French Immersion Certificate <span class="cert-badge">Upper Canada DSB</span></span><span class="cert-meta">Issued Jun 2023</span></div>
-      <div class="cert-item reveal"><span class="cert-name">DELF B2 — French Studies Diploma <span class="cert-badge">France Éducation International</span></span><span class="cert-meta">Issued Jan 2023</span></div>
-      <div class="cert-item reveal"><span class="cert-name">Secret Security Clearance (Government of Canada) <span class="cert-badge">Active / Enhanced Reliability</span></span><span class="cert-meta">Valid through 2028</span></div>
+    <div class="section-title reveal" style="margin-bottom: 44px;">Things I've built.</div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-status">In Development</div>
+        <div class="project-title">OttawaMapd</div>
+        <div class="project-desc">A map-based discovery platform for Ottawa — aggregating local events, deals, and community listings into a single interactive experience. Built for residents who want to stay connected to their city.</div>
+        <div class="project-tags">
+          <span class="project-tag">Next.js 14</span>
+          <span class="project-tag">Supabase</span>
+          <span class="project-tag">Mapbox GL</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Vercel</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-status">University of Ottawa · Jan–Apr 2026</div>
+        <div class="project-title">Hotel Booking System</div>
+        <div class="project-desc">A full-featured database management system for hotel reservations, built with PostgreSQL and pgAdmin. Covers room inventory, guest management, booking workflows, and reporting queries.</div>
+        <div class="project-tags">
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">pgAdmin</span>
+          <span class="project-tag">DBMS</span>
+          <span class="project-tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-status">Government of Canada</div>
+        <div class="project-title">PSPC Financial Dashboard</div>
+        <div class="project-desc">A bilingual EN/FR executive Power BI report suite covering departmental expenditures, fiscal year comparisons, and audit pages for PSPC leadership. Features bookmark-based language navigation and dynamic DAX measures.</div>
+        <div class="project-tags">
+          <span class="project-tag">Power BI</span>
+          <span class="project-tag">DAX</span>
+          <span class="project-tag">Azure</span>
+          <span class="project-tag">EN/FR</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-status">Academic</div>
+        <div class="project-title">8-Queens Hill Climbing Solver</div>
+        <div class="project-desc">A concurrent Java implementation of the 8-Queens problem using Hill Climbing Search with multi-threaded execution, demonstrating synchronisation strategies and heuristic-based optimisation.</div>
+        <div class="project-tags">
+          <span class="project-tag">Java</span>
+          <span class="project-tag">Concurrency</span>
+          <span class="project-tag">AI Search</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- COURSES: Removed term names (Fall/Winter/Summer) and unit references -->
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-header reveal">
+      <span class="section-label">Education</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="experience-list">
+      <div class="education-item reveal">
+        <div class="education-year">Sep 2023 – Dec 2027</div>
+        <div>
+          <div class="education-degree">BASc Computer Software Engineering (Co-op)</div>
+          <div class="education-school">University of Ottawa, Ottawa ON</div>
+          <div class="education-detail">Co-operative education program with multiple industry placements across cloud, data engineering, and business intelligence roles in the federal government.</div>
+        </div>
+      </div>
+
+      <div class="education-item reveal">
+        <div class="education-year">Issued Jan 2023</div>
+        <div>
+          <div class="education-degree">DELF B2 — French Studies Diploma</div>
+          <div class="education-school">France Éducation International</div>
+          <div class="education-detail">Upper-intermediate French language certification, demonstrating the ability to understand and communicate in professional and academic contexts.</div>
+        </div>
+      </div>
+
+      <div class="education-item reveal">
+        <div class="education-year">Issued Jun 2023</div>
+        <div>
+          <div class="education-degree">French Immersion Certificate</div>
+          <div class="education-school">Upper Canada District School Board</div>
+          <div class="education-detail">Completed secondary school French immersion program, with core subjects delivered in French throughout.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
   <section id="courses">
-    <div class="section-header reveal"><span class="section-label">Coursework</span><div class="section-rule"></div></div>
+    <div class="section-header reveal">
+      <span class="section-label">Coursework</span>
+      <div class="section-rule"></div>
+    </div>
     <div class="section-title reveal" style="margin-bottom: 24px;">What I've studied.</div>
-    <p class="courses-intro reveal">BASc Software Engineering core & elective courses — University of Ottawa</p>
-    <div class="courses-block reveal"><div class="courses-year-label">Year 1</div><div class="courses-pills-grid"><div class="course-pill" title="Principles of Physics I"><span class="course-code">PHY 1321</span><span class="course-name">Physics I</span></div><div class="course-pill" title="Technical Report Writing"><span class="course-code">ENG 1112</span><span class="course-name">Technical Writing</span></div><div class="course-pill" title="Introduction to Computing I"><span class="course-code">ITI 1120</span><span class="course-name">Computing I</span></div><div class="course-pill" title="Calculus I"><span class="course-code">MAT 1320</span><span class="course-name">Calculus I</span></div><div class="course-pill" title="Professional Communication"><span class="course-code">SEG 2900</span><span class="course-name">Prof. Communication</span></div><div class="course-pill" title="Digital Systems I"><span class="course-code">ITI 1100</span><span class="course-name">Digital Systems I</span></div><div class="course-pill" title="Introduction to Computing II"><span class="course-code">ITI 1121</span><span class="course-name">Computing II</span></div><div class="course-pill" title="Calculus II"><span class="course-code">MAT 1322</span><span class="course-name">Calculus II</span></div><div class="course-pill" title="Discrete Mathematics"><span class="course-code">MAT 1348</span><span class="course-name">Discrete Math</span></div><div class="course-pill" title="Physics II"><span class="course-code">PHY 1322</span><span class="course-name">Physics II</span></div></div></div>
-    <div class="courses-block reveal"><div class="courses-year-label">Year 2</div><div class="courses-pills-grid"><div class="course-pill" title="Principles of Chemistry"><span class="course-code">CHM 1311</span><span class="course-name">Chemistry</span
+    <p class="courses-intro reveal">BASc Software Engineering (Co-op) — University of Ottawa · 120 units · 5 years. Hover any pill for the full title.</p>
+
+    <!-- YEAR 1 -->
+    <div class="courses-block reveal">
+      <div class="courses-year-header">
+        <div class="courses-year-label">Year 1 · 30 units</div>
+        <div class="courses-semester-grid">
+          <div class="courses-semester">
+            <div class="courses-sem-label">Fall</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Principles of Physics I"><span class="course-code">PHY 1321</span><span class="course-name">Physics I</span></div>
+              <div class="course-pill" title="Technical Report Writing"><span class="course-code">ENG 1112</span><span class="course-name">Technical Writing</span></div>
+              <div class="course-pill" title="Introduction to Computing I"><span class="course-code">ITI 1120</span><span class="course-name">Computing I</span></div>
+              <div class="course-pill" title="Calculus I"><span class="course-code">MAT 1320</span><span class="course-name">Calculus I</span></div>
+              <div class="course-pill" title="Professional Communication and Responsibility"><span class="course-code">SEG 2900</span><span class="course-name">Prof. Communication</span></div>
+            </div>
+          </div>
+          <div class="courses-semester">
+            <div class="courses-sem-label">Winter</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Digital Systems I"><span class="course-code">ITI 1100</span><span class="course-name">Digital Systems I</span></div>
+              <div class="course-pill" title="Introduction to Computing II"><span class="course-code">ITI 1121</span><span class="course-name">Computing II</span></div>
+              <div class="course-pill" title="Calculus II"><span class="course-code">MAT 1322</span><span class="course-name">Calculus II</span></div>
+              <div class="course-pill" title="Discrete Mathematics for Computing"><span class="course-code">MAT 1348</span><span class="course-name">Discrete Math</span></div>
+              <div class="course-pill" title="Principles of Physics II"><span class="course-code">PHY 1322</span><span class="course-name">Physics II</span></div>
+            </div>
+          </div>
+          <div class="courses-semester">
+            <div class="courses-sem-label">Summer</div>
+            <div class="courses-pills">
+              <div class="course-pill coop-pill" title="CO-OP Work Term I"><span class="course-code">SEG 2901</span><span class="course-name">Work Term I</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YEAR 2 -->
+    <div class="courses-block reveal">
+      <div class="courses-year-header">
+        <div class="courses-year-label">Year 2 · 30 units</div>
+        <div class="courses-semester-grid">
+          <div class="courses-semester">
+            <div class="courses-sem-label">Fall</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Principles of Chemistry"><span class="course-code">CHM 1311</span><span class="course-name">Chemistry</span></div>
+              <div class="course-pill" title="Introduction to Product Development for Engineers and Computer Scientists"><span class="course-code">GNG 2101</span><span class="course-name">Product Dev.</span></div>
+              <div class="course-pill" title="Computer Architecture I"><span class="course-code">CEG 2136</span><span class="course-name">Computer Arch.</span></div>
+              <div class="course-pill" title="Data Structures and Algorithms"><span class="course-code">CSI 2110</span><span class="course-name">Data Structures</span></div>
+              <div class="course-pill" title="Introduction to Software Engineering"><span class="course-code">SEG 2105</span><span class="course-name">Intro to SWE</span></div>
+            </div>
+          </div>
+          <div class="courses-semester">
+            <div class="courses-sem-label">Winter</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Operating Systems"><span class="course-code">CSI 3131</span><span class="course-name">Operating Systems</span></div>
+              <div class="course-pill" title="Software Quality Assurance"><span class="course-code">SEG 3103</span><span class="course-name">Quality Assurance</span></div>
+              <div class="course-pill" title="Analysis and Design of User Interfaces"><span class="course-code">SEG 3125</span><span class="course-name">UI Design</span></div>
+              <div class="course-pill" title="Engineering Mechanics"><span class="course-code">GNG 1105</span><span class="course-name">Eng. Mechanics</span></div>
+              <div class="course-pill" title="Introduction to Linear Algebra"><span class="course-code">MAT 1341</span><span class="course-name">Linear Algebra</span></div>
+            </div>
+          </div>
+          <div class="courses-semester">
+            <div class="courses-sem-label">Summer</div>
+            <div class="courses-pills">
+              <div class="course-pill coop-pill" title="CO-OP Work Term II"><span class="course-code">SEG 3901</span><span class="course-name">Work Term II</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YEAR 3 -->
+    <div class="courses-block reveal">
+      <div class="courses-year-header">
+        <div class="courses-year-label">Year 3 · 15 units</div>
+        <div class="courses-semester-grid">
+          <div class="courses-semester">
+            <div class="courses-sem-label">Fall</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Discrete Structures"><span class="course-code">CSI 2101</span><span class="course-name">Discrete Structures</span></div>
+              <div class="course-pill" title="Databases I"><span class="course-code">CSI 2132</span><span class="course-name">Databases I</span></div>
+              <div class="course-pill" title="Software Construction"><span class="course-code">SEG 2106</span><span class="course-name">Software Const.</span></div>
+              <div class="course-pill" title="Professional Software Engineering Practice"><span class="course-code">SEG 2911</span><span class="course-name">SWE Practice</span></div>
+              <div class="course-pill" title="Probability and Statistics for Engineers"><span class="course-code">STA 2391</span><span class="course-name">Prob. & Statistics</span></div>
+            </div>
+          </div>
+          <div class="courses-semester">
+            <div class="courses-sem-label">Winter / Summer</div>
+            <div class="courses-pills">
+              <div class="course-pill coop-pill" title="CO-OP Work Term III"><span class="course-code">SEG 3902</span><span class="course-name">Work Term III</span></div>
+              <div class="course-pill coop-pill" title="CO-OP Work Term IV (optional elective)"><span class="course-code">SEG 4901</span><span class="course-name">Work Term IV</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YEAR 4 -->
+    <div class="courses-block reveal">
+      <div class="courses-year-header">
+        <div class="courses-year-label">Year 4 · 30 units</div>
+        <div class="courses-semester-grid">
+          <div class="courses-semester">
+            <div class="courses-sem-label">Fall</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Design and Analysis of Algorithms I"><span class="course-code">CSI 3105</span><span class="course-name">Algorithms I</span></div>
+              <div class="course-pill" title="Software Requirements Analysis"><span class="course-code">SEG 3101</span><span class="course-name">Requirements</span></div>
+              <div class="course-pill" title="Software Design and Architecture"><span class="course-code">SEG 3102</span><span class="course-name">Design & Arch.</span></div>
+              <div class="course-pill" title="Software Project Management"><span class="course-code">SEG 4105</span><span class="course-name">Project Mgmt.</span></div>
+            </div>
+          </div>
+          <div class="courses-semester">
+            <div class="courses-sem-label">Winter</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Introduction to Data Communications and Networking"><span class="course-code">CEG 3185</span><span class="course-name">Networking</span></div>
+              <div class="course-pill" title="Real Time and Embedded Software Design"><span class="course-code">SEG 4145</span><span class="course-name">Real-Time Systems</span></div>
+              <div class="course-pill" title="Engineering Capstone Project - Part 1"><span class="course-code">SEG 4910</span><span class="course-name">Capstone I</span></div>
+            </div>
+          </div>
+          <div class="courses-semester">
+            <div class="courses-sem-label">Summer</div>
+            <div class="courses-pills">
+              <div class="course-pill coop-pill" title="CO-OP Work Term V"><span class="course-code">SEG 4902</span><span class="course-name">Work Term V</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YEAR 5 -->
+    <div class="courses-block reveal">
+      <div class="courses-year-header">
+        <div class="courses-year-label">Year 5 · 15 units</div>
+        <div class="courses-semester-grid">
+          <div class="courses-semester">
+            <div class="courses-sem-label">Fall / Winter</div>
+            <div class="courses-pills">
+              <div class="course-pill" title="Engineering Capstone Project - Part 2"><span class="course-code">SEG 4911</span><span class="course-name">Capstone II</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <span class="section-label">Contact</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="contact-inner">
+      <p class="contact-intro reveal">Open to new opportunities, collaborations, or just a conversation. Let's connect.</p>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/amani--mohamed" target="_blank" class="contact-link reveal">
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-value">linkedin.com/in/amani--mohamed</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+        <a href="mailto:amani@example.com" class="contact-link reveal">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-value">amani@example.com</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+        <a href="https://github.com/amani" target="_blank" class="contact-link reveal">
+          <span class="contact-link-label">GitHub</span>
+          <span class="contact-link-value">github.com/amani</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Amani Mohamed</span>
+    <span>BI Developer · Software Engineer · Ottawa</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
