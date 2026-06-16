@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amani Mohamed</title>
-
+  <title>Amani Mohamed — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -18,43 +16,70 @@
       --paper: #f7f7f5;
       --grey: #888888;
       --light: #e0e0e0;
-
-      /* NEW subtle pastel coral accent */
-      --accent: #f6b3b3;
-
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Inter', system-ui, sans-serif;
+      /* Very subtle pastel coral pink for background accents */
+      --coral-subtle: #fff4f0;
+      --coral-light: #ffddd3;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      background: linear-gradient(180deg, #fff 0%, #fff 60%, rgba(246,179,179,0.08) 100%);
+      background: var(--white);
       color: var(--black);
       font-family: var(--sans);
       font-size: 15px;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      /* Subtle coral pink background wash */
+      background-image: radial-gradient(circle at 10% 20%, var(--coral-subtle) 0%, var(--white) 90%);
+      background-attachment: fixed;
     }
 
-    /* NAV */
+    /* Additional subtle coral touch on specific sections */
+    section:nth-child(even) { 
+      background: rgba(255, 245, 240, 0.5); 
+    }
+    
+    .hero, .project-card:hover, .course-pill:hover {
+      transition: all 0.2s ease;
+    }
+
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 48px;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--light);
     }
-
     .nav-logo {
       font-family: var(--serif);
       font-weight: 700;
       font-size: 18px;
-      text-decoration: none;
+      letter-spacing: -0.02em;
       color: var(--black);
+      text-decoration: none;
     }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -63,176 +88,502 @@
       padding: 0 48px 80px;
       border-bottom: 1px solid var(--light);
     }
-
     .hero-eyebrow {
       font-size: 12px;
+      font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--grey);
+      margin-bottom: 28px;
     }
-
     .hero-name {
       font-family: var(--serif);
       font-size: clamp(60px, 10vw, 120px);
       font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 32px;
+      position: relative;
+      display: inline-block;
     }
-
+    .hero-name::after {
+      content: '';
+      position: absolute;
+      bottom: -8px; left: 0;
+      height: 3px;
+      background: var(--black);
+      width: 0;
+      animation: draw-line 0.9s cubic-bezier(0.25, 1, 0.5, 1) 0.4s forwards;
+    }
+    @keyframes draw-line { to { width: 100%; } }
     .hero-tagline {
       font-family: var(--serif);
       font-style: italic;
+      font-size: clamp(17px, 2.4vw, 24px);
       color: var(--grey);
+      font-weight: 400;
       max-width: 600px;
+      margin-bottom: 48px;
     }
+    .hero-meta { display: flex; gap: 40px; flex-wrap: wrap; }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .hero-meta-label {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey);
+    }
+    .hero-meta-value { font-size: 14px; color: var(--black); }
 
-    /* SECTION */
+    /* ── SECTION COMMON ── */
     section {
       padding: 88px 48px;
       border-bottom: 1px solid var(--light);
     }
 
-    section:nth-child(even) {
-      background: var(--paper);
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 56px;
     }
-
     .section-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--grey);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--grey); white-space: nowrap;
+    }
+    .section-rule { flex: 1; height: 1px; background: var(--light); }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
     }
 
-    /* CERTIFICATES (smaller + cleaner) */
-    .certs-list {
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-text p { font-size: 16px; line-height: 1.78; color: #333; margin-bottom: 18px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-aside { display: flex; flex-direction: column; gap: 28px; }
+    .about-stat { border-left: 2px solid var(--black); padding-left: 20px; }
+    .about-stat-number {
+      font-family: var(--serif); font-size: 40px;
+      font-weight: 900; line-height: 1; letter-spacing: -0.03em;
+    }
+    .about-stat-label { font-size: 13px; color: var(--grey); margin-top: 4px; }
+
+    /* ── EXPERIENCE ── */
+    .experience-list { display: flex; flex-direction: column; }
+    .experience-item {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 48px;
+      padding: 44px 0;
+      border-bottom: 1px solid var(--light);
+    }
+    .experience-item:last-child { border-bottom: none; }
+    .experience-meta { display: flex; flex-direction: column; gap: 5px; padding-top: 3px; }
+    .experience-date { font-size: 12px; font-weight: 500; letter-spacing: 0.05em; color: var(--grey); }
+    .experience-type { font-size: 11px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.07em; }
+    .experience-location { font-size: 12px; color: var(--grey); }
+    .experience-role {
+      font-family: var(--serif); font-size: 21px;
+      font-weight: 700; letter-spacing: -0.01em; margin-bottom: 3px;
+    }
+    .experience-company { font-size: 13px; font-weight: 500; color: var(--grey); margin-bottom: 14px; }
+    .experience-desc { font-size: 14px; line-height: 1.72; color: #444; }
+    .experience-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+    .tag {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 11px;
+      border: 1px solid var(--light);
+      color: var(--grey);
+      background: var(--white);
+    }
+    section:nth-child(even) .tag { background: rgba(255, 245, 240, 0.8); }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .skill-group {
+      padding: 36px 40px;
+      border-right: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+    }
+    .skill-group:nth-child(3n) { border-right: none; }
+    .skill-group:nth-last-child(-n+3) { border-bottom: none; }
+    .skill-group-name {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--grey); margin-bottom: 18px;
+    }
+    .skill-list { display: flex; flex-direction: column; gap: 9px; }
+    .skill-item { font-family: var(--serif); font-size: 16px; font-weight: 400; }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--light);
+      border: 1px solid var(--light);
+    }
+    .project-card {
+      background: var(--white);
+      padding: 44px;
+      transition: background 0.2s;
+      cursor: default;
+    }
+    section:nth-child(even) .project-card { background: rgba(255, 248, 244, 0.8); }
+    .project-card:hover { background: var(--black); }
+    .project-card:hover .project-title,
+    .project-card:hover .project-desc,
+    .project-card:hover .project-status { color: var(--white); }
+    .project-card:hover .project-tag { border-color: #444; color: #999; }
+
+    .project-status {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--grey); margin-bottom: 14px; transition: color 0.2s;
+    }
+    .project-title {
+      font-family: var(--serif); font-size: 22px;
+      font-weight: 700; letter-spacing: -0.01em;
+      margin-bottom: 10px; transition: color 0.2s;
+    }
+    .project-desc {
+      font-size: 13.5px; line-height: 1.7;
+      color: #555; margin-bottom: 22px; transition: color 0.2s;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tag {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 9px; border: 1px solid var(--light);
+      color: var(--grey); transition: border-color 0.2s, color 0.2s;
+    }
+
+    /* ── EDUCATION (for degree only) ── */
+    .education-item {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 48px;
+      padding: 44px 0;
+      border-bottom: 1px solid var(--light);
+    }
+    .education-item:last-child { border-bottom: none; }
+    .education-year { font-size: 12px; font-weight: 500; letter-spacing: 0.05em; color: var(--grey); padding-top: 3px; }
+    .education-degree { font-family: var(--serif); font-size: 21px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 3px; }
+    .education-school { font-size: 13px; color: var(--grey); margin-bottom: 10px; }
+    .education-detail { font-size: 14px; line-height: 1.7; color: #444; }
+
+    /* ── CERTIFICATES SECTION (new, smaller certs) ── */
+    .certificates-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0;
+      margin-top: 20px;
     }
-
     .cert-item {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0;
+      align-items: center;
+      padding: 14px 0;
       border-bottom: 1px solid var(--light);
     }
-
+    .cert-item:last-child { border-bottom: none; }
     .cert-name {
-      font-size: 13px;
       font-family: var(--sans);
+      font-size: 15px;
       font-weight: 500;
+      color: #2c2c2c;
     }
-
     .cert-meta {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--grey);
+      text-align: right;
+    }
+    .cert-badge {
+      font-size: 11px;
+      background: var(--coral-light);
+      padding: 2px 8px;
+      border-radius: 20px;
+      color: #a0563a;
+      margin-left: 10px;
     }
 
-    /* COURSEWORK pills only (NO term labels) */
+    /* ── COURSEWORK (without units, removed term labels) ── */
+    .courses-intro {
+      font-size: 14px;
+      color: var(--grey);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .courses-block {
+      margin-bottom: 36px;
+    }
+    .courses-block:last-child { margin-bottom: 0; }
+    .courses-year-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a56b54;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--coral-light);
+    }
+    /* removed semester/term labels — only course pills shown in a single grid */
+    .courses-pills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
     .course-pill {
       display: inline-flex;
-      gap: 6px;
-      padding: 5px 10px;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px 5px 12px;
       border: 1px solid var(--light);
+      background: var(--white);
+      cursor: default;
+      transition: background 0.15s, border-color 0.15s;
+      border-radius: 30px;
+    }
+    section:nth-child(even) .course-pill { background: rgba(255, 245, 240, 0.6); }
+    .course-pill:hover { background: var(--black); border-color: var(--black); }
+    .course-pill:hover .course-code,
+    .course-pill:hover .course-name { color: var(--white); }
+    .course-code {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      color: var(--grey);
+      transition: color 0.15s;
+    }
+    .course-name {
       font-size: 12px;
-    }
-
-    /* subtle accent hover */
-    .course-pill:hover {
-      background: var(--accent);
-      border-color: var(--accent);
+      font-weight: 400;
       color: var(--black);
+      transition: color 0.15s;
     }
 
+    /* ── CONTACT ── */
+    .contact-inner { max-width: 640px; }
+    .contact-intro {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(19px, 2.8vw, 28px);
+      line-height: 1.4;
+      color: #333;
+      margin-bottom: 44px;
+    }
+    .contact-links { display: flex; flex-direction: column; }
+    .contact-link {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 0; border-bottom: 1px solid var(--light);
+      text-decoration: none; color: var(--black);
+      transition: padding-left 0.2s;
+    }
+    .contact-link:hover { padding-left: 8px; }
+    .contact-link:hover .contact-link-arrow { opacity: 1; }
+    .contact-link-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey);
+    }
+    .contact-link-value { font-family: var(--serif); font-size: 19px; font-weight: 400; }
+    .contact-link-arrow { font-size: 18px; opacity: 0; transition: opacity 0.2s; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 28px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: var(--grey); letter-spacing: 0.04em;
+      background: rgba(255, 245, 240, 0.3);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { gap: 18px; }
+      .hero { padding: 0 24px 60px; }
+      section { padding: 60px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .experience-item { grid-template-columns: 1fr; gap: 10px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .education-item { grid-template-columns: 1fr; gap: 10px; }
+      .cert-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+      footer { flex-direction: column; gap: 6px; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-name::after { animation: none; width: 100%; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo">AM.</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#courses">Courses</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">AM.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO (REMOVED ROLES) -->
-<div class="hero">
-  <p class="hero-eyebrow">Ottawa, Canada</p>
-  <h1 class="hero-name">Amani Mohamed</h1>
-  <p class="hero-tagline">Building data pipelines, cloud systems, and BI tools for large-scale organizations.</p>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">About</div>
-  <p>
-    Software Engineering student with experience in cloud, data engineering, and BI systems in the federal government.
-  </p>
-</section>
-
-<!-- EXPERIENCE unchanged (omitted here for brevity in explanation, but keep your original) -->
-
-
-<!-- EDUCATION (REMOVED CERTS FROM HERE) -->
-<section id="education">
-  <div class="section-label">Education</div>
-
-  <p><b>BASc Software Engineering</b> — University of Ottawa</p>
-</section>
-
-<!-- CERTIFICATES (NEW SECTION) -->
-<section id="certificates">
-  <div class="section-label">Certificates</div>
-
-  <div class="certs-list">
-
-    <div class="cert-item">
-      <div class="cert-name">DELF B2 — French Certification</div>
-      <div class="cert-meta">France Éducation International</div>
+  <!-- HERO (removed BI Developer/Software Engineer titles) -->
+  <div class="hero">
+    <p class="hero-eyebrow">Ottawa, Canada</p>
+    <h1 class="hero-name">Amani Mohamed</h1>
+    <p class="hero-tagline">Building data pipelines, cloud infrastructure, and business intelligence tools for the Government of Canada — and beyond.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Currently</span>
+        <span class="hero-meta-value">BI Developer @ PSPC</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Studying</span>
+        <span class="hero-meta-value">BASc Software Engineering, uOttawa</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">LinkedIn</span>
+        <span class="hero-meta-value">linkedin.com/in/amani--mohamed</span>
+      </div>
     </div>
-
-    <div class="cert-item">
-      <div class="cert-name">French Immersion Certificate</div>
-      <div class="cert-meta">Upper Canada DSB</div>
-    </div>
-
-    <div class="cert-item">
-      <div class="cert-name">Secret Security Clearance</div>
-      <div class="cert-meta">Government of Canada</div>
-    </div>
-
   </div>
-</section>
 
-<!-- COURSES (REMOVED FALL/WINTER/SUMMER LABELS + UNITS) -->
-<section id="courses">
-  <div class="section-label">Coursework</div>
+  <!-- ABOUT (removed references to certs inside about) -->
+  <section id="about">
+    <div class="section-header reveal">
+      <span class="section-label">About</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm heading into my fourth year of a BASc in Software Engineering at the University of Ottawa, with over a year of practical experience in cloud, data, and AI through government co-op placements.</p>
+        <p>I'm proficient in the Microsoft ecosystem — Azure, Fabric, Power BI, Purview — and bring a software engineering mindset to every data problem: clean design, testable pipelines, and clear documentation.</p>
+        <p>I hold active government security clearance and deliver work in both official languages.</p>
+      </div>
+      <div class="about-aside reveal">
+        <div class="about-stat">
+          <div class="about-stat-number">5</div>
+          <div class="about-stat-label">Co-op & work placements completed</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">3</div>
+          <div class="about-stat-label">Federal government departments served</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">EN/FR</div>
+          <div class="about-stat-label">Bilingual (DELF B2 certified)</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p>Software Engineering — University of Ottawa</p>
+  <!-- EXPERIENCE (unchanged but no titles at top) -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <span class="section-label">Experience</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="section-title reveal" style="margin-bottom: 44px;">Where I've worked.</div>
+    <div class="experience-list">
+      <div class="experience-item reveal">
+        <div class="experience-meta"><span class="experience-date">May 2026 – Present</span><span class="experience-type">Co-op</span><span class="experience-location">Ottawa, ON</span></div>
+        <div class="experience-content"><div class="experience-role">BI Developer</div><div class="experience-company">Public Services and Procurement Canada (PSPC) · Data Science & Business Intelligence</div><div class="experience-desc">Delivering enterprise BI solutions and stakeholder dashboards on the Microsoft stack. Data modelling, DAX development, and stakeholder engagement across the department.</div><div class="experience-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Stakeholder Engagement</span></div></div>
+      </div>
+      <div class="experience-item reveal">
+        <div class="experience-meta"><span class="experience-date">Sep – Dec 2025</span><span class="experience-type">Co-op</span><span class="experience-location">Nepean, ON</span></div>
+        <div class="experience-content"><div class="experience-role">Data Engineer</div><div class="experience-company">Department of National Defence (DND) · DACD - Digital Services</div><div class="experience-desc">Built Fabric pipelines for enterprise datasets to support defence analytics. Catalogued datasets in Microsoft Purview for compliance.</div><div class="experience-tags"><span class="tag">Microsoft Fabric</span><span class="tag">Purview</span><span class="tag">Python</span><span class="tag">Data Governance</span></div></div>
+      </div>
+      <div class="experience-item reveal">
+        <div class="experience-meta"><span class="experience-date">Jan – Aug 2025</span><span class="experience-type">Co-op · Remote</span><span class="experience-location">Gatineau, QC</span></div>
+        <div class="experience-content"><div class="experience-role">Cloud Developer</div><div class="experience-company">Service Canada · Data Platform & AI Enablement</div><div class="experience-desc">Maintained CI/CD pipelines in Azure DevOps, RBAC permissions, automated ingestion with Python Azure Functions.</div><div class="experience-tags"><span class="tag">Azure DevOps</span><span class="tag">Azure Functions</span><span class="tag">Python</span><span class="tag">Synapse</span></div></div>
+      </div>
+      <div class="experience-item reveal">
+        <div class="experience-meta"><span class="experience-date">May – Aug 2024</span><span class="experience-type">Co-op</span><span class="experience-location">Ottawa, ON</span></div>
+        <div class="experience-content"><div class="experience-role">Information Management Analyst</div><div class="experience-company">Treasury Board of Canada Secretariat (TBS) · Corporate Services</div><div class="experience-desc">Cloud migration from on-premises to cloud, ensuring compliance with government data protection policies.</div><div class="experience-tags"><span class="tag">Power Platform</span><span class="tag">Cloud Migration</span><span class="tag">Data Protection</span></div></div>
+      </div>
+      <div class="experience-item reveal">
+        <div class="experience-meta"><span class="experience-date">Sep 2025 – Feb 2026</span><span class="experience-type">Volunteer</span><span class="experience-location">Ottawa, ON</span></div>
+        <div class="experience-content"><div class="experience-role">ERTW Commissioner — Sponsorships</div><div class="experience-company">Engineering Students' Society, University of Ottawa</div><div class="experience-desc">Secured two new partnerships with local businesses for student community.</div><div class="experience-tags"><span class="tag">Negotiation</span><span class="tag">Partnerships</span></div></div>
+      </div>
+    </div>
+  </section>
 
-  <div>
-    <span class="course-pill">CSI 2132 — Databases</span>
-    <span class="course-pill">SEG 2105 — Software Engineering</span>
-    <span class="course-pill">CSI 3131 — Operating Systems</span>
-    <span class="course-pill">SEG 3102 — Software Design</span>
-  </div>
-</section>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal"><span class="section-label">Skills</span><div class="section-rule"></div></div>
+    <div class="skills-grid reveal">
+      <div class="skill-group"><div class="skill-group-name">Cloud & Data Platform</div><div class="skill-list"><span class="skill-item">Microsoft Azure</span><span class="skill-item">Microsoft Fabric</span><span class="skill-item">Azure DevOps</span><span class="skill-item">Azure Functions</span><span class="skill-item">Azure Synapse</span><span class="skill-item">Microsoft Purview</span></div></div>
+      <div class="skill-group"><div class="skill-group-name">BI & Analytics</div><div class="skill-list"><span class="skill-item">Power BI</span><span class="skill-item">DAX</span><span class="skill-item">Power Query</span><span class="skill-item">SQL / PostgreSQL</span><span class="skill-item">Data Modelling</span><span class="skill-item">CI/CD Pipelines</span></div></div>
+      <div class="skill-group"><div class="skill-group-name">Development</div><div class="skill-list"><span class="skill-item">Python</span><span class="skill-item">TypeScript / JavaScript</span><span class="skill-item">React / Next.js</span><span class="skill-item">Java</span><span class="skill-item">Git</span><span class="skill-item">Agile / Scrum</span></div></div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">Contact</div>
-  <p>Email: amani@example.com</p>
-</section>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal"><span class="section-label">Projects</span><div class="section-rule"></div></div>
+    <div class="section-title reveal" style="margin-bottom: 44px;">Things I've built.</div>
+    <div class="projects-grid">
+      <div class="project-card reveal"><div class="project-status">In Development</div><div class="project-title">OttawaMapd</div><div class="project-desc">Map-based discovery platform for Ottawa — events, deals, community listings.</div><div class="project-tags"><span class="project-tag">Next.js 14</span><span class="project-tag">Supabase</span><span class="project-tag">Mapbox</span></div></div>
+      <div class="project-card reveal"><div class="project-status">University of Ottawa</div><div class="project-title">Hotel Booking System</div><div class="project-desc">PostgreSQL reservation system with inventory, guest management.</div><div class="project-tags"><span class="project-tag">PostgreSQL</span><span class="project-tag">SQL</span></div></div>
+      <div class="project-card reveal"><div class="project-status">Government of Canada</div><div class="project-title">PSPC Financial Dashboard</div><div class="project-desc">Bilingual Power BI executive report with DAX measures.</div><div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span class="project-tag">EN/FR</span></div></div>
+      <div class="project-card reveal"><div class="project-status">Academic</div><div class="project-title">8-Queens Hill Climbing Solver</div><div class="project-desc">Concurrent Java implementation with multi-threaded search.</div><div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">Concurrency</span></div></div>
+    </div>
+  </section>
 
-<!-- FOOTER (REMOVED ROLES) -->
-<footer>
-  <span>© 2026 Amani Mohamed</span>
-</footer>
+  <!-- EDUCATION (only degree left, French immersion and DELF removed from here) -->
+  <section id="education">
+    <div class="section-header reveal"><span class="section-label">Education</span><div class="section-rule"></div></div>
+    <div class="experience-list">
+      <div class="education-item reveal"><div class="education-year">Sep 2023 – Dec 2027</div><div><div class="education-degree">BASc Computer Software Engineering (Co-op)</div><div class="education-school">University of Ottawa, Ottawa ON</div><div class="education-detail">Co-operative education program with placements across cloud, data engineering, and business intelligence roles in the federal government.</div></div></div>
+    </div>
+  </section>
 
-</body>
-</html>
+  <!-- NEW CERTIFICATES SECTION: French Immersion + DELF B2 + Secret Security Clearance -->
+  <section id="certificates">
+    <div class="section-header reveal">
+      <span class="section-label">Certificates</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="section-title reveal" style="font-size: 32px; margin-bottom: 20px;">Credentials & clearances</div>
+    <div class="certificates-list">
+      <div class="cert-item reveal"><span class="cert-name">French Immersion Certificate <span class="cert-badge">Upper Canada DSB</span></span><span class="cert-meta">Issued Jun 2023</span></div>
+      <div class="cert-item reveal"><span class="cert-name">DELF B2 — French Studies Diploma <span class="cert-badge">France Éducation International</span></span><span class="cert-meta">Issued Jan 2023</span></div>
+      <div class="cert-item reveal"><span class="cert-name">Secret Security Clearance (Government of Canada) <span class="cert-badge">Active / Enhanced Reliability</span></span><span class="cert-meta">Valid through 2028</span></div>
+    </div>
+  </section>
+
+  <!-- COURSES: Removed term names (Fall/Winter/Summer) and unit references -->
+  <section id="courses">
+    <div class="section-header reveal"><span class="section-label">Coursework</span><div class="section-rule"></div></div>
+    <div class="section-title reveal" style="margin-bottom: 24px;">What I've studied.</div>
+    <p class="courses-intro reveal">BASc Software Engineering core & elective courses — University of Ottawa</p>
+    <div class="courses-block reveal"><div class="courses-year-label">Year 1</div><div class="courses-pills-grid"><div class="course-pill" title="Principles of Physics I"><span class="course-code">PHY 1321</span><span class="course-name">Physics I</span></div><div class="course-pill" title="Technical Report Writing"><span class="course-code">ENG 1112</span><span class="course-name">Technical Writing</span></div><div class="course-pill" title="Introduction to Computing I"><span class="course-code">ITI 1120</span><span class="course-name">Computing I</span></div><div class="course-pill" title="Calculus I"><span class="course-code">MAT 1320</span><span class="course-name">Calculus I</span></div><div class="course-pill" title="Professional Communication"><span class="course-code">SEG 2900</span><span class="course-name">Prof. Communication</span></div><div class="course-pill" title="Digital Systems I"><span class="course-code">ITI 1100</span><span class="course-name">Digital Systems I</span></div><div class="course-pill" title="Introduction to Computing II"><span class="course-code">ITI 1121</span><span class="course-name">Computing II</span></div><div class="course-pill" title="Calculus II"><span class="course-code">MAT 1322</span><span class="course-name">Calculus II</span></div><div class="course-pill" title="Discrete Mathematics"><span class="course-code">MAT 1348</span><span class="course-name">Discrete Math</span></div><div class="course-pill" title="Physics II"><span class="course-code">PHY 1322</span><span class="course-name">Physics II</span></div></div></div>
+    <div class="courses-block reveal"><div class="courses-year-label">Year 2</div><div class="courses-pills-grid"><div class="course-pill" title="Principles of Chemistry"><span class="course-code">CHM 1311</span><span class="course-name">Chemistry</span
